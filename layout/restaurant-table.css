@@ -1,0 +1,104 @@
+.restaurants {
+  width: 47.5rem;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 2px;
+  border: 2px solid coral;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgba(255, 127, 80, 0.5);
+}
+
+.restaurants h3 {
+  font-family: "info-heading", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: coral;
+  display: flex;
+  justify-content: center;
+}
+
+.restaurants table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.restaurants th {
+  font-family: 'text-medium', sans-serif;
+  border-bottom: 1px solid #ccc;
+  font-weight: normal;
+  padding: 0.5em 1em;
+  text-align: left;
+  width: 25%;
+}
+
+.restaurants td {
+  font-family: 'text-light', sans-serif;
+  font-weight: 50;
+  border-bottom: 1px solid #ccc;
+  padding: 0.5em 1em;
+
+}
+
+.highlight {
+  background-color: rgba(255, 127, 80, 0.144);
+  font-weight: bold;
+}
+
+.scrollable-table {
+  height: 50rem; /* Adjust as needed */
+  overflow: auto;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: rgb(250, 235, 215);
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+}
+
+.modal-content p {
+  font-family: "text-light", sans-serif;
+  font-size: 1rem;
+  display: flex;
+  justify-content: left;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.restaurant-name {
+  font-family: "info-heading", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: coral;
+  display: flex;
+  justify-content: left;
+}

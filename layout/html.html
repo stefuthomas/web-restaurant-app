@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Document</title>
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="main.css" >
+    <link rel="stylesheet" href="restaurant-table.css" >
+    <script src="restaurant-table.js" defer></script>
   </head>
   <body>
     <div class="header">
       <h1>MunchFindr</h1>
       <form action="/search" method="get">
-        <input type="search" name="q" placeholder="Search restaurants" />
+        <input type="search" name="q" placeholder="Search restaurants" >
       </form>
       <div class="account-buttons">
         <button>Log in</button>
@@ -20,12 +22,36 @@
     <div class="info">
       <main>
         <h2>Main content is going to be here:</h2>
-        <h3>Subheading</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro assumenda quod vero aut dolorum optio. Laudantium consequatur dolore rerum dolorem, amet excepturi incidunt illo asperiores nesciunt aliquam, modi velit nostrum.</p>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro assumenda quod vero aut dolorum optio. Laudantium consequatur dolore rerum dolorem, amet excepturi incidunt illo asperiores nesciunt aliquam, modi velit nostrum.</p>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro assumenda quod vero aut dolorum optio. Laudantium consequatur dolore rerum dolorem, amet excepturi incidunt illo asperiores nesciunt aliquam, modi velit nostrum.</p>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro assumenda quod vero aut dolorum optio. Laudantium consequatur dolore rerum dolorem, amet excepturi incidunt illo asperiores nesciunt aliquam, modi velit nostrum.</p>
+        <h3>Information</h3>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro
+          assumenda quod vero aut dolorum optio. Laudantium consequatur dolore
+          rerum dolorem, amet excepturi incidunt illo asperiores nesciunt
+          aliquam, modi velit nostrum.
+        </p>
       </main>
+    </div>
+    <div class="restaurants">
+      <section>
+        <h3>Restaurants</h3>
+        <div class="scrollable-table">
+          <table id="restaurants-table">
+            <tr>
+              <th>Name</th>
+              <th>Location</th>
+            </tr>
+            <!-- restaurants are displayed here  -->
+          </table>
+        </div>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="footer">
+      <p>&copy; 2024 MunchFindr</p>
     </div>
   </body>
 </html>
