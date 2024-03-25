@@ -1,127 +1,128 @@
 @font-face {
-    font-family: 'header';
-    src: url(fonts/Montserrat-Italic-VariableFont_wght.ttf) format('truetype');
+  font-family: "header";
+  src: url(fonts/Montserrat-Italic-VariableFont_wght.ttf) format("truetype");
 }
 
 @font-face {
-    font-family: 'buttons';
-    src: url(fonts/Inter-VariableFont_slnt\,wght.ttf) format('truetype');
+  font-family: "buttons";
+  src: url(fonts/Inter-VariableFont_slnt\wght.ttf) format("truetype");
 }
 
 @font-face {
-    font-family: 'info-heading';
-    src: url(fonts/Roboto-Black.ttf) format('truetype');
+  font-family: "info-heading";
+  src: url(fonts/Roboto-Black.ttf) format("truetype");
 }
 
 @font-face {
-    font-family: 'text-medium';
-    src: url(fonts/Roboto-Medium.ttf) format('truetype');
+  font-family: "text-medium";
+  src: url(fonts/Roboto-Medium.ttf) format("truetype");
 }
 
 @font-face {
-    font-family: 'text-light';
-    src: url(fonts/Roboto-Light.ttf) format('truetype');
+  font-family: "text-light";
+  src: url(fonts/Roboto-Light.ttf) format("truetype");
 }
 
 body {
-    background-color: rgba(250, 235, 215, 0.575);
+  background-color: rgba(250, 235, 215, 0.575);
 }
 
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    max-width: 95rem;
-    background-color: antiquewhite;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0 auto;
-    margin-top: 1rem;
-    border: 5px solid coral;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 5px rgba(255, 127, 80, 0.5);
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 90rem;
+  max-width: 95rem;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 1rem;
+  border: 5px solid coral;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgba(255, 127, 80, 0.5);
 }
 .header h1 {
-    font-family: 'header', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: coral;
+  font-family: "header", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: coral;
 }
 
 .header input {
-    font-family: 'header', sans-serif;
-    font-size: 1rem;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid coral;
-    width: 300px;
+  font-family: "header", sans-serif;
+  font-size: 1rem;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid coral;
+  width: 300px;
 }
 .account-buttons {
-    display:flex;
-    justify-content: space-between;
-    width: 140px;
+  display: flex;
+  justify-content: space-between;
+  width: 140px;
 }
 
 .account-buttons button {
-    font-family: 'buttons', sans-serif;
-    font-size: 1rem;
-    background-color: coral;
-    color: white;
-    border: 1px solid white;
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer;
+  font-family: "buttons", sans-serif;
+  font-size: 1rem;
+  background-color: coral;
+  color: white;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .account-buttons button:hover {
-    background-color: rgb(255, 68, 0);
+  background-color: rgb(255, 68, 0);
 }
 
 .info {
-    width: 95rem;
-    margin: 0 auto;
-    margin-top: 150px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
-    border: 2px solid coral; 
-    border-radius: 10px;
-    box-shadow: 0 0 10px 5px rgba(255, 127, 80, 0.5);
+  width: 90rem;
+  margin: 0 auto;
+  margin-top: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  border: 2px solid coral;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgba(255, 127, 80, 0.5);
 }
 
 .info h2 {
-    font-family: 'info-heading', sans-serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: coral;
-    display: flex;
-    justify-content: center;
+  font-family: "info-heading", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: coral;
+  display: flex;
+  justify-content: center;
 }
 
 .info h3 {
-    font-family: 'text-medium', sans-serif;
-    font-size: 1rem;
-    font-weight: bold;
-    color: coral;
-    display: flex;
-    justify-content:left;
-    margin-left: 20px;
+  font-family: "text-medium", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: coral;
+  display: flex;
+  justify-content: left;
+  margin-left: 20px;
 }
 
 .info p {
-    font-family: 'text-medium', sans-serif;
-    font-size: 1rem;
-    color: black;
-    display: flex;
-    justify-content: left;
-    margin-left: 20px;
+  font-family: "text-medium", sans-serif;
+  font-size: 1rem;
+  color: black;
+  display: flex;
+  justify-content: left;
+  margin-left: 20px;
 }
 
 .footer {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }

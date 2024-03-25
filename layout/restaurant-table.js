@@ -81,7 +81,7 @@ function createTable() {
       const restaurantCity = document.createElement("p");
       restaurantCity.textContent = restaurant.city ? 'City: ' + restaurant.city : "Not available";
       const restaurantPhone = document.createElement("p");
-      restaurantPhone.textContent = restaurant.phone!='-' ? 'Phone: ' + restaurant.phone : " Phone: Not available";
+      restaurantPhone.textContent = restaurant.phone!='-' ? 'Phone: ' + restaurant.phone : "Phone: Not available";
       console.log(restaurant.phone);
       const restaurantCompany = document.createElement("p");
       restaurantCompany.textContent = restaurant.company ? 'Company: ' + restaurant.company : "Not available";

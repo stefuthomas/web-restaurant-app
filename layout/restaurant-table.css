@@ -1,5 +1,7 @@
 .restaurants {
-  width: 47.5rem;
+  display: flex;
+  flex-direction: row;
+  width: 90rem;
   margin: auto;
   margin-top: 20px;
   border-radius: 2px;
@@ -26,7 +28,7 @@
 }
 
 .restaurants th {
-  font-family: 'text-medium', sans-serif;
+  font-family: "text-medium", sans-serif;
   border-bottom: 1px solid #ccc;
   font-weight: normal;
   padding: 0.5em 1em;
@@ -35,11 +37,10 @@
 }
 
 .restaurants td {
-  font-family: 'text-light', sans-serif;
+  font-family: "text-light", sans-serif;
   font-weight: 50;
   border-bottom: 1px solid #ccc;
   padding: 0.5em 1em;
-
 }
 
 .highlight {
@@ -48,14 +49,14 @@
 }
 
 .scrollable-table {
-  height: 50rem; /* Adjust as needed */
+  height: 50rem;
   overflow: auto;
 }
 
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   padding-top: 100px;
   left: 0;
   top: 0;
