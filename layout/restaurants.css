@@ -7,6 +7,8 @@
   border-radius: 2px;
   border-radius: 10px;
   box-shadow: 0 0 5px 5px rgba(206, 178, 163, 0.404);
+  background-color: antiquewhite;
+
 }
 
 .restaurants section {
@@ -74,11 +76,20 @@
 }
 
 .modal-content {
-  background-color: rgb(250, 235, 215);
+  background-color: antiquewhite;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
   width: 40%;
+}
+
+.modal-content h3 {
+  font-family: "info-heading", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: coral;
+  display: flex;
+  justify-content: center;
 }
 
 .modal-content p {
@@ -87,6 +98,12 @@
   display: flex;
   justify-content: left;
 }
+
+.courses-table {
+  height: 15rem;
+  overflow: auto;
+}
+
 
 .close {
   color: #aaaaaa;
@@ -108,7 +125,7 @@
   font-weight: bold;
   color: coral;
   display: flex;
-  justify-content: left;
+  justify-content: center;
 }
 
 #map {

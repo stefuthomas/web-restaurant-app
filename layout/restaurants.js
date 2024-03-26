@@ -42,6 +42,23 @@ async function getDailyMenu(id) {
   }
 }
 
+async function getWeeklyMenu(id) {
+  try {
+    const response = await fetch(
+      `https://10.120.32.94/restaurant/api/v1/restaurants/weekly/${id}/fi`
+    );
+    if (!response.ok) {
+      throw new Error(error);
+    } else {
+      const data = await response.json();
+      return data;
+    }
+  } catch (error) {
+    console.log("Error: ", error);
+  }
+}
+    
+
 function createTableRow(restaurant) {
   const row = document.createElement("tr");
   const nameCell = document.createElement("td");
@@ -86,19 +103,59 @@ export function createModalContent(restaurant) {
 
 export function addCoursesToModalContent(restaurantId, modalContent) {
   const courses = getDailyMenu(restaurantId);
+  const coursesWeekly = getWeeklyMenu(restaurantId);
+  coursesWeekly.then(console.log("Weekly courses: ", coursesWeekly));   // TODO: Immplement weekly courses
   courses.then((data) => {
-    const menu = document.createElement("h3");
-    menu.classList.add("menu");
-    menu.textContent = "Menu";
-    modalContent.appendChild(menu);
+    const dailyMenu = document.createElement("h3");
+    const currentDate = new Date();
+    dailyMenu.textContent = "Daily menu for " + currentDate.toLocaleDateString();
+    modalContent.appendChild(dailyMenu);
 
-    const courseList = document.createElement("ul");
-    data.courses.forEach((course) => {
-      const courseName = document.createElement("li");
-      courseName.textContent = course.name;
-      courseList.appendChild(courseName);
-      modalContent.appendChild(courseName);
-    });
+    if (data.courses.length === 0) {
+      const noCourses = document.createElement("p");
+      noCourses.textContent = "No courses available";
+      modalContent.appendChild(noCourses);
+    } else {
+      const courseDiv = document.createElement("div");
+      courseDiv.classList.add("courses-table");
+
+      const courseTable = document.createElement("table");
+      courseDiv.appendChild(courseTable);
+
+      const tableHeader = document.createElement("tr");
+      const courseHeader = document.createElement("th");
+      courseHeader.textContent = "Course";
+      tableHeader.appendChild(courseHeader);
+      
+      const priceHeader = document.createElement("th");
+      priceHeader.textContent = "Price";
+      tableHeader.appendChild(priceHeader);
+
+      const dietHeader = document.createElement("th");
+      dietHeader.textContent = "Diets";
+      tableHeader.appendChild(dietHeader);
+
+      courseTable.appendChild(tableHeader);
+
+      data.courses.forEach((course) => {
+        const row = document.createElement("tr");
+
+        const courseCell = document.createElement("td");
+        courseCell.textContent = course.name;
+        row.appendChild(courseCell);
+
+        const priceCell = document.createElement("td");
+        priceCell.textContent = course.price;
+        row.appendChild(priceCell);
+
+        const dietCell = document.createElement("td");
+        dietCell.textContent = course.diets;
+        row.appendChild(dietCell);
+
+        courseTable.appendChild(row);
+      });
+      modalContent.appendChild(courseDiv);
+    }
   });
 }
 
