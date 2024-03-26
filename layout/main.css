@@ -89,9 +89,8 @@ body {
   justify-content: space-around;
   align-items: center;
   align-content: center;
-  border: 2px solid coral;
   border-radius: 10px;
-  box-shadow: 0 0 10px 5px rgba(255, 127, 80, 0.5);
+  box-shadow: 0 0 5px 5px rgba(206, 178, 163, 0.404);
 }
 
 .info h2 {
