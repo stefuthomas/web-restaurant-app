@@ -1,4 +1,4 @@
-import { createModalContent, modal, span, createDailyMenu } from "/layout/restaurants.js";
+import { createModalContent, modal, span, createDailyMenu, createWeeklyMenu } from "/layout/restaurants.js";
 let map, currentLocation;
 const restaurants = [];
 
@@ -29,22 +29,53 @@ async function createMarkers() {
         restaurants.push(restaurant);
       });
       restaurants.forEach((restaurant) => {
-        L.marker([restaurant.location.coordinates[1], restaurant.location.coordinates[0]])
-          .addTo(map)
-          .on("click", () => {
-            const modalContent = createModalContent(restaurant);
-            createDailyMenu(restaurant._id, modalContent);
-            modal.style.display = "block";
-            span.onclick = function () {
+        const marker = L.marker([restaurant.location.coordinates[1], restaurant.location.coordinates[0]]).addTo(map);
+      
+        const popupContent = document.createElement('div');
+        popupContent.classList.add('popup-content');
+        const name = document.createElement('h3');
+        name.textContent = restaurant.name;
+        popupContent.appendChild(name);
+
+        const popupButtons = document.createElement('div');
+        popupButtons.classList.add('popup-buttons');
+        popupContent.appendChild(popupButtons);
+
+        const dailyMenuButton = document.createElement('button');
+        dailyMenuButton.textContent = 'Daily Menu';
+        dailyMenuButton.onclick = () => {
+          const modalContent = createModalContent(restaurant);
+          createDailyMenu(restaurant._id, modalContent);
+          modal.style.display = "block";
+          span.onclick = function () {
+            modal.style.display = "none";
+          };
+          window.onclick = function (event) {
+            if (event.target == modal) {
               modal.style.display = "none";
-            };
-          
-            window.onclick = function (event) {
-              if (event.target == modal) {
-                modal.style.display = "none";
-              }
-            };
-          });
+            }
+          };
+        };
+        popupButtons.appendChild(dailyMenuButton);
+      
+        const weeklyMenuButton = document.createElement('button');
+        weeklyMenuButton.textContent = 'Weekly Menu';
+        weeklyMenuButton.onclick = () => {
+          const modalContent = createModalContent(restaurant);
+          createWeeklyMenu(restaurant._id, modalContent);
+          modal.style.display = "block";
+          span.onclick = function () {
+            modal.style.display = "none";
+          };
+          window.onclick = function (event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          };
+        };
+        popupButtons.appendChild(weeklyMenuButton);
+
+        marker.bindPopup(popupContent);
       });
     }
   } catch (error) {

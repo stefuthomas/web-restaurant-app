@@ -199,7 +199,6 @@ export function createWeeklyMenu(restaurantId, modalContent) {
         });
       });
 
-      
       modalContent.appendChild(weeklyMenu);
       modalContent.appendChild(courseDiv);
     }
@@ -296,10 +295,12 @@ function createTable() {
       modal.style.display = "block";
 
       const modalContent = createModalContent(restaurant);
-
+      const menuButtons = document.createElement("div");
+      menuButtons.classList.add("menu-buttons");
+      modalContent.appendChild(menuButtons);
       const dailyMenuButton = document.createElement("button");
       dailyMenuButton.textContent = "Daily menu";
-      modalContent.appendChild(dailyMenuButton);
+      menuButtons.appendChild(dailyMenuButton);
       dailyMenuButton.addEventListener("click", () => {
         createDailyMenu(restaurant._id, modalContent);
         dailyMenuButton.disabled = true;
@@ -308,7 +309,7 @@ function createTable() {
 
       const weeklyMenuButton = document.createElement("button");
       weeklyMenuButton.textContent = "Weekly menu";
-      modalContent.appendChild(weeklyMenuButton);
+      menuButtons.appendChild(weeklyMenuButton);
       weeklyMenuButton.addEventListener("click", () => {
         weeklyMenuButton.disabled = true;
         dailyMenuButton.disabled = false;
