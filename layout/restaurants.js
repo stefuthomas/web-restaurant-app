@@ -57,7 +57,6 @@ async function getWeeklyMenu(id) {
     console.log("Error: ", error);
   }
 }
-    
 
 function createTableRow(restaurant) {
   const row = document.createElement("tr");
@@ -74,9 +73,10 @@ function createTableRow(restaurant) {
 
 function createRestaurantDetailElement(detailName, detailValue) {
   const detailElement = document.createElement("p");
-  detailElement.textContent = detailValue && detailValue !== '-' 
-    ? `${detailName}: ${detailValue}` 
-    : `${detailName}: Not available`;
+  detailElement.textContent =
+    detailValue && detailValue !== "-"
+      ? `${detailName}: ${detailValue}`
+      : `${detailName}: Not available`;
   return detailElement;
 }
 
@@ -92,30 +92,154 @@ export function createModalContent(restaurant) {
   restaurantName.textContent = restaurant.name;
   modalContent.appendChild(restaurantName);
 
-  modalContent.appendChild(createRestaurantDetailElement('Address', restaurant.address));
-  modalContent.appendChild(createRestaurantDetailElement('Postal code', restaurant.postalCode));
-  modalContent.appendChild(createRestaurantDetailElement('City', restaurant.city));
-  modalContent.appendChild(createRestaurantDetailElement('Phone', restaurant.phone));
-  modalContent.appendChild(createRestaurantDetailElement('Company', restaurant.company));
+  modalContent.appendChild(
+    createRestaurantDetailElement("Address", restaurant.address)
+  );
+  modalContent.appendChild(
+    createRestaurantDetailElement("Postal code", restaurant.postalCode)
+  );
+  modalContent.appendChild(
+    createRestaurantDetailElement("City", restaurant.city)
+  );
+  modalContent.appendChild(
+    createRestaurantDetailElement("Phone", restaurant.phone)
+  );
+  modalContent.appendChild(
+    createRestaurantDetailElement("Company", restaurant.company)
+  );
 
   return modalContent;
 }
 
-export function addCoursesToModalContent(restaurantId, modalContent) {
-  const courses = getDailyMenu(restaurantId);
-  const coursesWeekly = getWeeklyMenu(restaurantId);
-  coursesWeekly.then(console.log("Weekly courses: ", coursesWeekly));   // TODO: Immplement weekly courses
-  courses.then((data) => {
-    const dailyMenu = document.createElement("h3");
-    const currentDate = new Date();
-    dailyMenu.textContent = "Daily menu for " + currentDate.toLocaleDateString();
-    modalContent.appendChild(dailyMenu);
+export function createWeeklyMenu(restaurantId, modalContent) {
+  const weeklyMenu = getWeeklyMenu(restaurantId);
+  weeklyMenu.then((data) => {
+    console.log(data);
+    const existingNoCourses = modalContent.querySelector(".no-daily-courses");
+    if (existingNoCourses) {
+      modalContent.removeChild(existingNoCourses);
+    }
+    const existingCoursesTable = modalContent.querySelector(".courses-table");
+    const existingDailyMenu = modalContent.querySelector(".daily-menu");
+    const existingWeeklyMenu = modalContent.querySelector(".weekly-menu");
+    if (existingCoursesTable) {
+      modalContent.removeChild(existingCoursesTable);
+    }
+    if (existingDailyMenu) {
+      modalContent.removeChild(existingDailyMenu);
+    }
+    if (existingWeeklyMenu) {
+      modalContent.removeChild(existingWeeklyMenu);
+    }
 
-    if (data.courses.length === 0) {
-      const noCourses = document.createElement("p");
-      noCourses.textContent = "No courses available";
-      modalContent.appendChild(noCourses);
+    if (data.days.length === 0) {
+      if (!modalContent.querySelector(".no-weekly-courses")) {
+        const noCourses = document.createElement("p");
+        noCourses.classList.add("no-weekly-courses");
+        noCourses.textContent = "No weekly courses available";
+        modalContent.appendChild(noCourses);
+      }
     } else {
+      const weeklyMenu = document.createElement("h3");
+      weeklyMenu.classList.add("weekly-menu");
+      weeklyMenu.textContent = "Weekly menu";
+
+      const courseDiv = document.createElement("div");
+      courseDiv.classList.add("courses-table");
+
+      const courseTable = document.createElement("table");
+      courseDiv.appendChild(courseTable);
+
+      const tableHeader = document.createElement("tr");
+      const dateHeader = document.createElement("th");
+      dateHeader.textContent = "Date";
+      tableHeader.appendChild(dateHeader);
+
+      const courseHeader = document.createElement("th");
+      courseHeader.textContent = "Course";
+      tableHeader.appendChild(courseHeader);
+
+      const priceHeader = document.createElement("th");
+      priceHeader.textContent = "Price";
+      tableHeader.appendChild(priceHeader);
+
+      const dietHeader = document.createElement("th");
+      dietHeader.textContent = "Diets";
+      tableHeader.appendChild(dietHeader);
+
+      courseTable.appendChild(tableHeader);
+
+      data.days.forEach((day) => {
+        const row = document.createElement("tr");
+
+        const dateCell = document.createElement("td");
+        dateCell.textContent = day.date;
+        row.appendChild(dateCell);
+        console.log(day.date);
+        day.courses.forEach((course) => {
+          const row = document.createElement("tr");
+
+          const dateCell = document.createElement("td");
+          dateCell.textContent = day.date;
+          row.appendChild(dateCell);
+
+          const courseCell = document.createElement("td");
+          courseCell.textContent = course.name;
+          row.appendChild(courseCell);
+
+          const priceCell = document.createElement("td");
+          priceCell.textContent = course.price;
+          row.appendChild(priceCell);
+
+          const dietCell = document.createElement("td");
+          dietCell.textContent = course.diets;
+          row.appendChild(dietCell);
+
+          courseTable.appendChild(row);
+        });
+      });
+
+      
+      modalContent.appendChild(weeklyMenu);
+      modalContent.appendChild(courseDiv);
+    }
+  });
+}
+
+export function createDailyMenu(restaurantId, modalContent) {
+  const courses = getDailyMenu(restaurantId);
+  courses.then((data) => {
+    const existingCoursesTable = modalContent.querySelector(".courses-table");
+    const existingDailyMenu = modalContent.querySelector(".daily-menu");
+    const existingWeeklyMenu = modalContent.querySelector(".weekly-menu");
+    if (existingCoursesTable) {
+      modalContent.removeChild(existingCoursesTable);
+    }
+    if (existingDailyMenu) {
+      modalContent.removeChild(existingDailyMenu);
+    }
+    if (existingWeeklyMenu) {
+      modalContent.removeChild(existingWeeklyMenu);
+    }
+    if (data.courses.length === 0) {
+      const existingNoWeeklyCourses =
+        modalContent.querySelector(".no-weekly-courses");
+      if (existingNoWeeklyCourses) {
+        modalContent.removeChild(existingNoWeeklyCourses);
+      }
+      if (!modalContent.querySelector(".no-daily-courses")) {
+        const noCourses = document.createElement("p");
+        noCourses.classList.add("no-daily-courses");
+        noCourses.textContent = "No courses available";
+        modalContent.appendChild(noCourses);
+      }
+    } else {
+      const dailyMenu = document.createElement("h3");
+      dailyMenu.classList.add("daily-menu");
+      const currentDate = new Date();
+      dailyMenu.textContent =
+        "Daily menu for " + currentDate.toLocaleDateString();
+
       const courseDiv = document.createElement("div");
       courseDiv.classList.add("courses-table");
 
@@ -126,7 +250,7 @@ export function addCoursesToModalContent(restaurantId, modalContent) {
       const courseHeader = document.createElement("th");
       courseHeader.textContent = "Course";
       tableHeader.appendChild(courseHeader);
-      
+
       const priceHeader = document.createElement("th");
       priceHeader.textContent = "Price";
       tableHeader.appendChild(priceHeader);
@@ -154,6 +278,7 @@ export function addCoursesToModalContent(restaurantId, modalContent) {
 
         courseTable.appendChild(row);
       });
+      modalContent.appendChild(dailyMenu);
       modalContent.appendChild(courseDiv);
     }
   });
@@ -171,7 +296,24 @@ function createTable() {
       modal.style.display = "block";
 
       const modalContent = createModalContent(restaurant);
-      addCoursesToModalContent(restaurant._id, modalContent);
+
+      const dailyMenuButton = document.createElement("button");
+      dailyMenuButton.textContent = "Daily menu";
+      modalContent.appendChild(dailyMenuButton);
+      dailyMenuButton.addEventListener("click", () => {
+        createDailyMenu(restaurant._id, modalContent);
+        dailyMenuButton.disabled = true;
+        weeklyMenuButton.disabled = false;
+      });
+
+      const weeklyMenuButton = document.createElement("button");
+      weeklyMenuButton.textContent = "Weekly menu";
+      modalContent.appendChild(weeklyMenuButton);
+      weeklyMenuButton.addEventListener("click", () => {
+        weeklyMenuButton.disabled = true;
+        dailyMenuButton.disabled = false;
+        createWeeklyMenu(restaurant._id, modalContent);
+      });
     });
 
     table.appendChild(row);

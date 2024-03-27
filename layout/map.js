@@ -1,4 +1,4 @@
-import { createModalContent, modal, span, addCoursesToModalContent } from "/layout/restaurants.js";
+import { createModalContent, modal, span, createDailyMenu } from "/layout/restaurants.js";
 let map, currentLocation;
 const restaurants = [];
 
@@ -33,7 +33,7 @@ async function createMarkers() {
           .addTo(map)
           .on("click", () => {
             const modalContent = createModalContent(restaurant);
-            addCoursesToModalContent(restaurant._id, modalContent);
+            createDailyMenu(restaurant._id, modalContent);
             modal.style.display = "block";
             span.onclick = function () {
               modal.style.display = "none";
