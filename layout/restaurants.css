@@ -162,11 +162,26 @@
   display: flex;
   justify-content: center;
 }
-/* TODO: customize buttons */
+
 .popup-content .popup-buttons {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  margin: auto;
+}
+
+.popup-buttons button {
+  font-family: "buttons", sans-serif;
+  background-color: coral;
+  color: white;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-buttons button:hover {
+  background-color: rgb(255, 68, 0);
 }
 
 #map {

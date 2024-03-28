@@ -1,4 +1,5 @@
-const restaurants = [];
+export const restaurants = [];
+
 const table = document.getElementById("restaurants-table");
 export const modal = document.getElementById("myModal");
 export const span = document.getElementsByClassName("close")[0];
@@ -18,7 +19,6 @@ async function getRestaurants() {
       restaurants.sort((a, b) => {
         return a.name.localeCompare(b.name);
       });
-      createTable();
     }
   } catch (error) {
     console.log("Error: ", error);
@@ -114,7 +114,6 @@ export function createModalContent(restaurant) {
 export function createWeeklyMenu(restaurantId, modalContent) {
   const weeklyMenu = getWeeklyMenu(restaurantId);
   weeklyMenu.then((data) => {
-    console.log(data);
     const existingNoCourses = modalContent.querySelector(".no-daily-courses");
     if (existingNoCourses) {
       modalContent.removeChild(existingNoCourses);
@@ -175,7 +174,7 @@ export function createWeeklyMenu(restaurantId, modalContent) {
         const dateCell = document.createElement("td");
         dateCell.textContent = day.date;
         row.appendChild(dateCell);
-        console.log(day.date);
+
         day.courses.forEach((course) => {
           const row = document.createElement("tr");
 
@@ -286,6 +285,7 @@ export function createDailyMenu(restaurantId, modalContent) {
 function createTable() {
   restaurants.forEach((restaurant) => {
     const row = createTableRow(restaurant);
+    row.id = restaurant._id;
 
     row.addEventListener("click", () => {
       document.querySelectorAll("tr").forEach((row) => {
@@ -311,9 +311,9 @@ function createTable() {
       weeklyMenuButton.textContent = "Weekly menu";
       menuButtons.appendChild(weeklyMenuButton);
       weeklyMenuButton.addEventListener("click", () => {
+        createWeeklyMenu(restaurant._id, modalContent);
         weeklyMenuButton.disabled = true;
         dailyMenuButton.disabled = false;
-        createWeeklyMenu(restaurant._id, modalContent);
       });
     });
 
@@ -331,4 +331,6 @@ function createTable() {
   };
 }
 
-getRestaurants();
+getRestaurants().then(() => {
+  createTable();
+});

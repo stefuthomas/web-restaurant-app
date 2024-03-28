@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="restaurants.css" />
+    <script type ="module" src="searchbar.js" defer></script>
     <script type="module" src="restaurants.js" defer></script>
     <script type="module" src="map.js" defer></script>
     <link
@@ -23,7 +24,7 @@
   <body>
     <div class="header">
       <h1>MunchFindr</h1>
-      <form action="/search" method="get">
+      <form class="searchbar">
         <input type="search" name="q" placeholder="Search restaurants" />
       </form>
       <div class="account-buttons">
