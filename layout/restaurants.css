@@ -92,6 +92,38 @@
   justify-content: center;
 }
 
+.modal-content .suggested {
+  font-family: "info-heading", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: coral;
+  display: flex;
+  justify-content: left;
+}
+
+.modal-content .matching-restaurants-list {
+  font-family: "text-medium", sans-serif;
+  color: rgba(255, 127, 80, 0.884);
+  font-size: 1.25rem;
+  max-height: 15rem;
+  overflow: auto;
+  list-style-type: none;
+}
+
+.modal-content .matching-restaurants-list li:hover {
+  cursor: pointer;
+  color: coral;
+  font-weight: bold;
+  list-style-type: circle;
+}
+
+.modal-content .suggestions-list {
+    color: coral;
+
+  font-family: "text-medium", sans-serif;
+  font-size: 1.25rem;
+}
+
 .modal-content p {
   font-family: "text-light", sans-serif;
   font-size: 1rem;
@@ -127,7 +159,7 @@
 }
 
 .close {
-  color: #aaaaaa;
+  color: black;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -156,7 +188,7 @@
 
 .popup-content h3 {
   font-family: "info-heading", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
   color: coral;
   display: flex;

@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "header";
+    src: url(fonts/Montserrat-Italic-VariableFont_wght.ttf) format("truetype");
+  }
+  
+  @font-face {
+    font-family: "buttons";
+    src: url(fonts/Inter-Regular.ttf) format("truetype");
+  }
+  
+  @font-face {
+    font-family: "info-heading";
+    src: url(fonts/Roboto-Black.ttf) format("truetype");
+  } @font-face {
+    font-family: "text-medium";
+    src: url(fonts/Roboto-Medium.ttf) format("truetype");
+  }
+  
+  @font-face {
+    font-family: "text-light";
+    src: url(fonts/Roboto-Light.ttf) format("truetype");
+  }

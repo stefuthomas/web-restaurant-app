@@ -16,7 +16,7 @@ async function getRestaurants() {
       data.forEach((restaurant) => {
         restaurants.push(restaurant);
       });
-      restaurants.sort((a, b) => {
+      restaurants.sort((a, b) => { 
         return a.name.localeCompare(b.name);
       });
     }
