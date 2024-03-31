@@ -16,7 +16,7 @@ async function getRestaurants() {
       data.forEach((restaurant) => {
         restaurants.push(restaurant);
       });
-      restaurants.sort((a, b) => { 
+      restaurants.sort((a, b) => {
         return a.name.localeCompare(b.name);
       });
     }
@@ -282,7 +282,50 @@ export function createDailyMenu(restaurantId, modalContent) {
   });
 }
 
+const sortSelect = document.getElementById("sort-select");
+
+sortSelect.addEventListener("change", (event) => {
+
+  const updateTable = () => {
+    const tbody = document.getElementById("table-body");
+    while (tbody.firstChild) {
+      tbody.removeChild(tbody.firstChild);
+    }
+    createTable();
+  }
+
+  const sortValue = event.target.value;
+
+  if (sortValue === "a-z") {
+    restaurants.sort((a, b) => a.name.localeCompare(b.name));
+    updateTable();
+  } else if (sortValue === "z-a") {
+    restaurants.sort((a, b) => b.name.localeCompare(a.name));
+    updateTable();
+  } else if (sortValue === "closest-to-you") {
+    navigator.geolocation.getCurrentPosition(position => {
+      const x1 = position.coords.latitude;
+      const y1 = position.coords.longitude;
+      console.log(x1 + " " + y1)
+
+      restaurants.forEach((restaurant) => {
+        console.log(restaurant);
+        let x2 = restaurant.location.coordinates[1];
+        let y2 = restaurant.location.coordinates[0];
+        restaurant.distance = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+      });
+      restaurants.sort((a,b) => a.distance-b.distance);
+      updateTable();
+    });
+  }
+});
+
 function createTable() {
+  const tbody = document.getElementById("table-body");
+  while (tbody.firstChild) {
+    tbody.removeChild(tbody.firstChild);
+  }
+
   restaurants.forEach((restaurant) => {
     const row = createTableRow(restaurant);
     row.id = restaurant._id;
@@ -316,8 +359,7 @@ function createTable() {
         dailyMenuButton.disabled = false;
       });
     });
-
-    table.appendChild(row);
+    tbody.appendChild(row);
   });
 
   span.onclick = function () {

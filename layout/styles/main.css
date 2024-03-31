@@ -88,12 +88,18 @@ body {
 }
 
 .info p {
-  font-family: "text-medium", sans-serif;
+  font-family: "text-light", sans-serif;
   font-size: 1rem;
-  color: black;
+
   display: flex;
   justify-content: left;
   margin-left: 20px;
+}
+
+.info ul {
+  font-family: "text-light", sans-serif;
+  font-size: 1rem;
+  list-style: circle;
 }
 
 .footer {

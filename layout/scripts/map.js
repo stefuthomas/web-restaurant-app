@@ -1,4 +1,10 @@
-import { createModalContent, modal, span, createDailyMenu, createWeeklyMenu } from "/layout/restaurants.js";
+import {
+  createModalContent,
+  modal,
+  span,
+  createDailyMenu,
+  createWeeklyMenu,
+} from "/layout/scripts/restaurants.js";
 let map, currentLocation;
 const restaurants = [];
 
@@ -28,21 +34,25 @@ async function createMarkers() {
       data.forEach((restaurant) => {
         restaurants.push(restaurant);
       });
+
       restaurants.forEach((restaurant) => {
-        const marker = L.marker([restaurant.location.coordinates[1], restaurant.location.coordinates[0]]).addTo(map);
-      
-        const popupContent = document.createElement('div');
-        popupContent.classList.add('popup-content');
-        const name = document.createElement('h3');
+        const marker = L.marker([
+          restaurant.location.coordinates[1],
+          restaurant.location.coordinates[0],
+        ]).addTo(map);
+
+        const popupContent = document.createElement("div");
+        popupContent.classList.add("popup-content");
+        const name = document.createElement("h3");
         name.textContent = restaurant.name;
         popupContent.appendChild(name);
 
-        const popupButtons = document.createElement('div');
-        popupButtons.classList.add('popup-buttons');
+        const popupButtons = document.createElement("div");
+        popupButtons.classList.add("popup-buttons");
         popupContent.appendChild(popupButtons);
 
-        const dailyMenuButton = document.createElement('button');
-        dailyMenuButton.textContent = 'Daily Menu';
+        const dailyMenuButton = document.createElement("button");
+        dailyMenuButton.textContent = "Daily Menu";
         dailyMenuButton.onclick = () => {
           const modalContent = createModalContent(restaurant);
           createDailyMenu(restaurant._id, modalContent);
@@ -57,9 +67,9 @@ async function createMarkers() {
           };
         };
         popupButtons.appendChild(dailyMenuButton);
-      
-        const weeklyMenuButton = document.createElement('button');
-        weeklyMenuButton.textContent = 'Weekly Menu';
+
+        const weeklyMenuButton = document.createElement("button");
+        weeklyMenuButton.textContent = "Weekly Menu";
         weeklyMenuButton.onclick = () => {
           const modalContent = createModalContent(restaurant);
           createWeeklyMenu(restaurant._id, modalContent);

@@ -5,7 +5,7 @@ import {
   createDailyMenu,
   createWeeklyMenu,
   restaurants,
-} from "/layout/restaurants.js";
+} from "/layout/scripts/restaurants.js";
 
 const searchbarInput = document.querySelector(".searchbar input");
 searchbarInput.addEventListener("keydown", (e) => {

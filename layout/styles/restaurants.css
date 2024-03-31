@@ -8,7 +8,27 @@
   border-radius: 10px;
   box-shadow: 0 0 5px 5px rgba(206, 178, 163, 0.404);
   background-color: antiquewhite;
+}
 
+.restaurants-header {
+  display: flex;
+  justify-content:space-between;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.restaurants select {
+  height: 1.5rem;
+  width: 8rem;
+  font-family: "text-light", sans-serif;
+  font-size: 1rem;
+  color: coral;
+  margin-right: 2rem;
+  margin-bottom: auto;
+  margin-top: auto;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
 }
 
 .restaurants section {
@@ -118,8 +138,7 @@
 }
 
 .modal-content .suggestions-list {
-    color: coral;
-
+  color: coral;
   font-family: "text-medium", sans-serif;
   font-size: 1.25rem;
 }
