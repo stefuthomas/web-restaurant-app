@@ -102,6 +102,35 @@ body {
   list-style: circle;
 }
 
+.profile {
+  width: 90rem;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 20px;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 5px rgba(206, 178, 163, 0.404);
+  background-color: antiquewhite;
+}
+
+.profile h2 {
+  font-family: "info-heading", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: coral;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-information {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+
 .footer {
   display: flex;
   justify-content: center;

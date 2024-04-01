@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/layout/styles/fonts.css" >
-    <link rel="stylesheet" href="/layout/styles/main.css" >
-    <link rel="stylesheet" href="/layout/styles/restaurants.css" >
-    <script type ="module" src="/layout/scripts/searchbar.js"></script>
+    <link rel="stylesheet" href="/layout/styles/fonts.css" />
+    <link rel="stylesheet" href="/layout/styles/main.css" />
+    <link rel="stylesheet" href="/layout/styles/restaurants.css" />
+    <script type="module" src="/layout/scripts/searchbar.js"></script>
     <script type="module" src="/layout/scripts/restaurants.js"></script>
     <script type="module" src="/layout/scripts/map.js"></script>
+    <script src="/layout/scripts/user.js" defer></script>
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""
-    >
+    />
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
@@ -26,10 +27,10 @@
     <div class="header">
       <h1>MunchFinder</h1>
       <form class="searchbar">
-        <input type="search" name="q" placeholder="Search restaurants" >
+        <input type="search" name="q" placeholder="Search restaurants" />
       </form>
       <div class="account-buttons">
-        <button>Log in</button>
+        <button onclick="window.location.href='login.html'">Log in</button>
         <button>Sign up</button>
       </div>
     </div>
@@ -38,7 +39,11 @@
         <h2>Welcome to MunchFinder</h2>
         <h3>About us</h3>
         <p>
-          MunchFinder is your one-stop solution for finding student-friendly restaurants and viewing their daily and weekly menus. We understand the needs of students and aim to make meal planning easier and more affordable. Browse through a wide variety of restaurants, compare menus, and find the perfect meal that suits your taste and budget.
+          MunchFinder is your one-stop solution for finding student-friendly
+          restaurants and viewing their daily and weekly menus. We understand
+          the needs of students and aim to make meal planning easier and more
+          affordable. Browse through a wide variety of restaurants, compare
+          menus, and find the perfect meal that suits your taste and budget.
         </p>
         <h3>On our website you can:</h3>
         <ul>
@@ -46,26 +51,37 @@
           <li>View daily and weekly menus</li>
           <li>View restaurant locations on a map</li>
           <li>Sign up to save your restaurant preferances</li>
+        </ul>
       </main>
+    </div>
+    <div class="profile">
+      <h2>Profile</h2>
+      <section>
+        <div class="profile-information">
+          <p>You are not logged in atm</p>
+        </div>
+      </section>
     </div>
     <div class="restaurants">
       <section>
         <div class="restaurants-header">
-        <h3>Restaurants</h3>
-        <select id="sort-select">
-          <option value="a-z">A-Z</option>
-          <option value="z-a">Z-A</option>
-          <option value="closest-to-you">Closest to you</option>
-        </select>
+          <h3>Restaurants</h3>
+          <select id="sort-select">
+            <option value="a-z">A-Z</option>
+            <option value="z-a">Z-A</option>
+            <option value="closest-to-you">Closest to you</option>
+          </select>
         </div>
         <div class="scrollable-table">
           <table id="restaurants-table">
             <thead>
-              <th>Name</th>
-              <th>Location</th>
-              </thead>
-              <tbody id="table-body">
-            <!-- restaurants are displayed here  -->
+              <tr>
+                <th>Name</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              <!-- restaurants are displayed here  -->
             </tbody>
           </table>
         </div>
