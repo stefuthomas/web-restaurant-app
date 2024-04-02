@@ -30,6 +30,7 @@ async function login(username, password) {
   if (response.ok) {
     sessionStorage.setItem("token", data.token);
     sessionStorage.setItem("data", JSON.stringify(data));
+    console.log(data);
     loginMessage.innerHTML = "Login successful!";
     loginMessage.style.color = "green";
     setTimeout(() => {

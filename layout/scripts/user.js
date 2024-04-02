@@ -1,14 +1,15 @@
-import { clearAccountButtons, createLogoutButton, createProfileButton} from "/layout/scripts/components.js";
+import { clearAccountButtons, createLogoutButton, createProfileButton, createUserData} from "/layout/scripts/components.js";
 
 window.onload = function() {
     const token = sessionStorage.getItem('token');
-    const data = JSON.parse(sessionStorage.getItem('data'));
 
     if (token) {
         clearAccountButtons();
         createLogoutButton();
         createProfileButton();
+        createUserData(true);
+
     } else {
-        console.log('User not logged in');
+        createUserData(false);
     }
 }

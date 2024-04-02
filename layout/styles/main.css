@@ -67,12 +67,15 @@ body {
   background-color: rgb(255, 68, 0);
 }
 
-.info {
-  width: 90rem;
-  margin: 0 auto;
-  margin-top: 125px;
+.info-and-profile {
   display: flex;
-  justify-content: space-around;
+  justify-content:center;
+  margin-top: 125px;
+}
+
+.info {
+  margin-right: 1rem;
+  width: 44rem;
   align-items: center;
   align-content: center;
   border-radius: 10px;
@@ -102,7 +105,6 @@ body {
 .info p {
   font-family: "text-light", sans-serif;
   font-size: 1rem;
-
   display: flex;
   justify-content: left;
   margin-left: 20px;
@@ -115,42 +117,52 @@ body {
 }
 
 .profile {
-  width: 90rem;
-  height: auto;
-  margin: 0 auto;
-  margin-top: 20px;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+  display: block;
+  width: 44rem;
+  margin-left: 1rem;
+  border-radius: 2px;
   border-radius: 10px;
   box-shadow: 0 0 5px 5px rgba(206, 178, 163, 0.404);
   background-color: antiquewhite;
 }
 
 .profile h2 {
-  display: flex;
-  justify-content: center;
-  margin-left: 1rem;
   font-family: "heading", sans-serif;
+  padding-top: 20px;
   font-size: 1.5rem;
   font-weight: bold;
   color: coral;
+  display: flex;
+  justify-content: center;
+
 }
 
-.profile-information {
-  font-family: "text-light", sans-serif;
-  display: block;
-  align-items: left;
-  align-content: left;
-  margin-left: 1rem;
-}
-
-.account-message {
-  font-family: "text-light", sans-serif;
-  font-size: 1.25rem;
+.profile h3 {
+  font-family: "text-medium", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: coral;
   display: flex;
   justify-content: left;
-  margin-top: 1rem;
+}
+
+.profile .user-data {
+  font-family: "text-light", sans-serif;
+  margin-left: 20px;
+
+}
+
+.user-data .user-avatar {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.link {
+  font-family: "text-light", sans-serif;
+  font-style: italic;
+  text-decoration: none;
+  color: coral;
 }
 
 .footer {

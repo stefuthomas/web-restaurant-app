@@ -287,3 +287,45 @@ export function createProfileButton() {
     window.location.href = "profile.html";
   });
 }
+
+export function createUserData(loggedIn) {
+  const profile = document.getElementById("profile-info");
+  const userData = document.createElement("div");
+  userData.classList.add("user-data");
+  
+  if (loggedIn) {
+    const data = JSON.parse(sessionStorage.getItem("data"));
+
+    const avatar = document.createElement("img");
+
+    avatar.src = data.data.avatar ? data.data.avatar : "/layout/styles/images/default-avatar.jpg";
+    avatar.alt = "User avatar";
+    avatar.classList.add("user-avatar");
+    userData.appendChild(avatar);
+
+    const account = document.createElement("h3");
+    account.textContent = data.data.username;
+    userData.appendChild(account);
+
+  } else {
+    const loginMessage = document.createElement("p");
+    loginMessage.innerHTML = "Please login to view your profile&nbsp;";
+    const loginLink = document.createElement("a");
+    loginLink.classList.add("link");
+    loginLink.textContent = "here.";
+    loginLink.href = "login.html";
+    loginMessage.appendChild(loginLink);
+    userData.appendChild(loginMessage);
+
+    const signupMessage = document.createElement("p");
+    signupMessage.innerHTML = "Don't have an account? &nbsp;";
+    const signupLink = document.createElement("a");
+    signupLink.classList.add("link");
+    signupLink.textContent = "Sign up for free!";
+    signupLink.href = "signup.html";
+    signupMessage.appendChild(signupLink);
+    userData.appendChild(signupMessage);
+  }
+
+  profile.appendChild(userData);
+}

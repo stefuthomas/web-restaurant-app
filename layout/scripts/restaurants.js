@@ -1,4 +1,4 @@
-import { getRestaurants, getDailyMenu, getWeeklyMenu, restaurants, createModalContent, modal, span, createDailyMenu, createWeeklyMenu} from "/layout/scripts/components.js";
+import { getRestaurants, restaurants, createModalContent, modal, span, createDailyMenu, createWeeklyMenu} from "/layout/scripts/components.js";
 
 function createTableRow(restaurant) {
   const row = document.createElement("tr");
