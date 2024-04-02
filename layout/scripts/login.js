@@ -25,11 +25,11 @@ async function login(username, password) {
     }
   );
 
-  const data = await response.json();
+  let data = await response.json();
   console.log(data);
   if (response.ok) {
     sessionStorage.setItem("token", data.token);
-    sessionStorage.setItem("data", data);
+    sessionStorage.setItem("data", JSON.stringify(data));
     loginMessage.innerHTML = "Login successful!";
     loginMessage.style.color = "green";
     setTimeout(() => {

@@ -9,7 +9,7 @@
   }
   
   @font-face {
-    font-family: "info-heading";
+    font-family: "heading";
     src: url(fonts/Roboto-Black.ttf) format("truetype");
   } @font-face {
     font-family: "text-medium";

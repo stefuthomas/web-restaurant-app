@@ -40,6 +40,18 @@ body {
   width: 140px;
 }
 
+.account-buttons .logout-button {
+  font-family: "buttons", sans-serif;
+  font-size: 1rem;
+  margin: auto;
+  background-color: coral;
+  color: white;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .account-buttons button {
   font-family: "buttons", sans-serif;
   font-size: 1rem;
@@ -69,7 +81,7 @@ body {
 }
 
 .info h2 {
-  font-family: "info-heading", sans-serif;
+  font-family: "heading", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
   color: coral;
@@ -107,7 +119,7 @@ body {
   height: auto;
   margin: 0 auto;
   margin-top: 20px;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   align-content: center;
   border-radius: 10px;
@@ -116,19 +128,29 @@ body {
 }
 
 .profile h2 {
-  font-family: "info-heading", sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-left: 1rem;
+  font-family: "heading", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
   color: coral;
-  display: flex;
-  justify-content: center;
 }
 
 .profile-information {
+  font-family: "text-light", sans-serif;
+  display: block;
+  align-items: left;
+  align-content: left;
+  margin-left: 1rem;
+}
+
+.account-message {
+  font-family: "text-light", sans-serif;
+  font-size: 1.25rem;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
+  justify-content: left;
+  margin-top: 1rem;
 }
 
 .footer {

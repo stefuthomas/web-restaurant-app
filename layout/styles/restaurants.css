@@ -38,7 +38,7 @@
 }
 
 .restaurants h3 {
-  font-family: "info-heading", sans-serif;
+  font-family: "heading", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
   color: coral;
@@ -104,7 +104,7 @@
 }
 
 .modal-content h3 {
-  font-family: "info-heading", sans-serif;
+  font-family: "heading", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
   color: coral;
@@ -113,7 +113,7 @@
 }
 
 .modal-content .suggested {
-  font-family: "info-heading", sans-serif;
+  font-family: "heading", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
   color: coral;
@@ -192,7 +192,7 @@
 }
 
 .restaurant-name {
-  font-family: "info-heading", sans-serif;
+  font-family: "heading", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
   color: coral;
@@ -206,7 +206,7 @@
 }
 
 .popup-content h3 {
-  font-family: "info-heading", sans-serif;
+  font-family: "heading", sans-serif;
   font-size: 1.25rem;
   font-weight: bold;
   color: coral;
