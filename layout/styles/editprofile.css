@@ -1,0 +1,170 @@
+body {
+  margin-top: 5rem;
+  background-color: rgba(233, 209, 179, 0.774);
+}
+
+
+.header {
+  color: coral;
+  font-family: "heading", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 1 auto;
+  margin-top: 1rem;
+  align-items: center;
+}
+.user {
+  width: 50rem;
+  height: auto;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  margin-top: 1rem;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 5px rgba(206, 178, 163, 0.404);
+}
+
+.main {
+  width: auto;
+}
+
+.avatar {
+  margin: auto;
+  margin-top: 1rem;
+  display: flex;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid coral;
+}
+
+.edit-profile-header {
+  height: 2rem;
+  font-family: "heading", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: coral;
+  display: flex;
+  justify-content: center;
+}
+
+.username h1 {
+  font-family: "heading", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: coral;
+  display: flex;
+  justify-content: center;
+}
+
+.user-information {
+  font-family: "text-light", sans-serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  display: block;
+  margin-bottom: 1rem;
+  border: 2px solid coral;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.buttons {
+  font-family: "buttons", sans-serif;
+  font-size: 1rem;
+  background-color: coral;
+  color: white;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background-color: rgb(255, 68, 0);
+}
+
+#edit-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#edit-form label {
+  font-family: "text-light", sans-serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: coral;
+  margin: 0.5rem;
+}
+
+#edit-form input {
+  font-family: "text-light", sans-serif;
+  width: 20rem;
+  font-size: 1rem;
+  border: none;
+  font-style: italic;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0.5rem;
+}
+
+#favourite-restaurant {
+  font-family: "text-light", sans-serif;
+  font-size: 1rem;
+  width: 20rem;
+  border: none;
+  font-style: italic;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0.5rem;
+}
+
+.save-changes {
+  font-family: "buttons", sans-serif;
+  font-size: 1rem;
+  margin-top: 1rem;
+  background-color: coral;
+  color: white;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.change-avatar {
+  display: flex;
+  justify-content: center;
+}
+
+.change-avatar button {
+  font-family: "buttons", sans-serif;
+  font-size: 1rem;
+  background-color: coral;
+  color: white;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.change-avatar button:hover {
+  background-color: rgb(255, 68, 0);
+}
+
+#avatar-input {
+  display: none;
+}
+
+#save-status {
+  font-family: "text-light";
+  justify-content: center;
+  font-size: 1rem;
+  height: 1.5rem;
+  text-align: center;
+}
+
+.save-changes:hover {
+  background-color: rgb(255, 68, 0);
+}

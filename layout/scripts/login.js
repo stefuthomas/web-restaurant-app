@@ -5,8 +5,8 @@ const loginMessage = document.getElementById("login-status");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const username = form.username.value;
-  const password = form.password.value;
+  let username = form.username.value;
+  let password = form.password.value;
   login(username, password);
 });
 
@@ -26,17 +26,20 @@ async function login(username, password) {
   );
 
   let data = await response.json();
-  console.log(data);
+
   if (response.ok) {
     sessionStorage.setItem("token", data.token);
     sessionStorage.setItem("data", JSON.stringify(data));
-    console.log(data);
     loginMessage.innerHTML = "Login successful!";
     loginMessage.style.color = "green";
     setTimeout(() => {
       window.location.href = "index.html";
-    }, 3000);
+    }, 2000);
   } else {
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
+
     loginMessage.innerHTML = data.message + "!";
     loginMessage.style.color = "red";
   }

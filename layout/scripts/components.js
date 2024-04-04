@@ -284,7 +284,7 @@ export function createProfileButton() {
   profileButton.textContent = "Profile";
   accountButtons.appendChild(profileButton);
   profileButton.addEventListener("click", () => {
-    window.location.href = "profile.html";
+    window.location.href = "editprofile.html";
   });
 }
 
@@ -292,13 +292,24 @@ export function createUserData(loggedIn) {
   const profile = document.getElementById("profile-info");
   const userData = document.createElement("div");
   userData.classList.add("user-data");
-  
+
   if (loggedIn) {
     const data = JSON.parse(sessionStorage.getItem("data"));
+    const token = sessionStorage.getItem("token");
 
     const avatar = document.createElement("img");
 
-    avatar.src = data.data.avatar ? data.data.avatar : "/layout/styles/images/default-avatar.jpg";
+    if (!data.data.avatar) {
+      avatar.src = "/layout/styles/images/default-avatar.jpg";
+    } else {
+      getAvatar(data, token)
+        .then((url) => {
+          avatar.src = url;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
     avatar.alt = "User avatar";
     avatar.classList.add("user-avatar");
     userData.appendChild(avatar);
@@ -307,6 +318,28 @@ export function createUserData(loggedIn) {
     account.textContent = data.data.username;
     userData.appendChild(account);
 
+    const favouriteRestaurantDiv = document.createElement("div");
+    favouriteRestaurantDiv.classList.add("favourite-restaurant");
+
+    const favouriteRestaurantText = document.createElement("p");
+    favouriteRestaurantText.textContent = "Favourite restaurant: ";
+    favouriteRestaurantDiv.appendChild(favouriteRestaurantText);
+
+    const favouriteRestaurant = document.createElement("a");
+    favouriteRestaurant.textContent =
+      data.data.favouriteRestaurant != null
+        ? data.data.favouriteRestaurant.classList.add("link")
+        : "Favourite restaurant not specified yet.";
+
+    favouriteRestaurantDiv.appendChild(favouriteRestaurant);
+
+    userData.appendChild(favouriteRestaurantDiv);
+
+    const profileLink = document.createElement("a");
+    profileLink.textContent = "Edit profile";
+    profileLink.classList.add("link");
+    profileLink.href = "editprofile.html";
+    userData.appendChild(profileLink);
   } else {
     const loginMessage = document.createElement("p");
     loginMessage.innerHTML = "Please login to view your profile&nbsp;";
@@ -329,3 +362,110 @@ export function createUserData(loggedIn) {
 
   profile.appendChild(userData);
 }
+
+export async function uploadProfilePicture(file, token) {
+  const formData = new FormData();
+  formData.append("avatar", file);
+  try {
+    const response = await fetch(
+      "https://10.120.32.94/restaurant/api/v1/users/avatar",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      }
+    );
+    let data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log("Error: ", error);
+  }
+}
+
+export async function getAvatar(data, token) {
+  console.log(data.data.avatar);
+  try {
+    const response = await fetch(
+      `https://10.120.32.94/uploads/${data.data.avatar}`,
+      {
+        method: "GET",
+        mode: "no-cors",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    if (!response.ok) {
+      return "/layout/styles/images/default-avatar.jpg";
+    } else {
+      const avatar = await response.blob();
+      return URL.createObjectURL(avatar);
+    }
+  } catch (error) {
+    console.log("Error: ", error);
+  }
+}
+
+export async function uploadNewUsername(username, token) {
+  try {
+    const response = await fetch(
+      "https://10.120.32.94/restaurant/api/v1/users",
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: username
+        }),
+      }
+    );
+
+    let data = await response.json();
+
+    if (response.ok) {
+      console.log(data);
+      return true;
+    } else {
+      console.log(data);
+      return false;
+    }
+  } catch (error) {
+    console.log("Error: ", error);
+  }
+}
+
+
+export async function uploadNewEmail(email, token) {
+  try {
+    const response = await fetch(
+      "https://10.120.32.94/restaurant/api/v1/users",
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email
+        }),
+      }
+    );
+
+    let data = await response.json();
+
+    if (response.ok) {
+      console.log(data);
+      return true;
+    } else {
+      console.log(data);
+      return false;
+    }
+  } catch (error) {
+    console.log("Error: ", error);
+  }
+}
+

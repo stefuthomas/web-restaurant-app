@@ -1,0 +1,88 @@
+body {
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    margin: 0;
+}
+
+main {
+    width: 100%;
+}
+
+.signup {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px solid coral;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px rgba(206, 178, 163, 0.404);
+    background-color: antiquewhite;
+}
+
+.signup h1 {
+    display: flex;
+    justify-content: center;
+    font-family: "header", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: coral;
+}
+
+.signup form {
+    height: 12.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.signup input {
+    font-family: "text-light", sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid coral;
+}
+
+.signup button {
+    width: 20%;
+    font-family: "buttons", sans-serif;
+    font-size: 1rem;
+    background-color: coral;
+    color: white;
+    margin-top: 1rem;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#signup-status {
+    font-family: "text-light";
+    justify-content: center;
+    font-size: 1rem;
+    height: 1rem;
+    text-align: center;
+}
+
+.existing-account{
+    font-family: "text-light";
+    justify-content: center;
+    font-size: 1rem;
+    height: 1.25rem;
+    text-align: center;
+}
+
+.link {
+    font-family: "text-light", sans-serif;
+    font-style: italic;
+    text-decoration: none;
+    color: coral;
+  }

@@ -74,8 +74,8 @@ body {
 }
 
 .info {
-  margin-right: 1rem;
-  width: 44rem;
+  margin-right: 0.5rem;
+  width: 60rem;
   align-items: center;
   align-content: center;
   border-radius: 10px;
@@ -118,8 +118,8 @@ body {
 
 .profile {
   display: block;
-  width: 44rem;
-  margin-left: 1rem;
+  width: 29.5rem;
+  margin-left: 0.5rem;
   border-radius: 2px;
   border-radius: 10px;
   box-shadow: 0 0 5px 5px rgba(206, 178, 163, 0.404);
@@ -128,7 +128,6 @@ body {
 
 .profile h2 {
   font-family: "heading", sans-serif;
-  padding-top: 20px;
   font-size: 1.5rem;
   font-weight: bold;
   color: coral;
@@ -144,18 +143,30 @@ body {
   color: coral;
   display: flex;
   justify-content: left;
+  margin-top: 0.5rem;
+  margin-left: 0;
+  margin-bottom: 0;
 }
 
 .profile .user-data {
   font-family: "text-light", sans-serif;
   margin-left: 20px;
-
 }
 
 .user-data .user-avatar {
   height: 100px;
   width: 100px;
   border-radius: 50%;
+}
+
+.favourite-restaurant {
+  display: flex;
+}
+
+.favourite-restaurant a {
+  margin: auto;
+  justify-content: left;
+  margin-left: 0.5rem;
 }
 
 .link {
