@@ -31,7 +31,6 @@ async function signup(username, email, password) {
 
   let data = await response.json();
   if (response.ok) {
-    console.log(data);
     signupMessage.innerHTML = "Signup successful!";
     signupMessage.style.color = "green";
     sessionStorage.setItem("data", JSON.stringify(data));
@@ -39,13 +38,11 @@ async function signup(username, email, password) {
       window.location.href = "login.html";
     }, 2000);
   } else {
-    console.log(data);
     if (data.message) {
       signupMessage.innerHTML = data.message;
       signupMessage.style.color = "red";
     } else if (data.issues[0].message) {
       signupMessage.innerHTML = data.issues[0].message;
-      console.log(data.issues[0].message);
       signupMessage.style.color = "red";
     }
   }

@@ -85,7 +85,6 @@ function createUserData(loggedIn) {
     favouriteRestaurantDiv.appendChild(favouriteRestaurantText);
 
     const favouriteRestaurant = document.createElement("a");
-    console.log(data);
     favouriteRestaurant.textContent =
       data.data.favouriteRestaurant != null
         ? createFavouriteRestaurantLink(
@@ -129,7 +128,6 @@ function createUserData(loggedIn) {
 function createFavouriteRestaurantLink(restaurantId, favouriteRestaurant) {
   const restaurantData = getRestaurant(restaurantId);
   restaurantData.then((data) => {
-    console.log(data);
     favouriteRestaurant.textContent = data.name;
     favouriteRestaurant.classList.add("link");
     favouriteRestaurant.addEventListener("click", () => {

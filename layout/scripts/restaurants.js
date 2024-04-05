@@ -54,10 +54,7 @@ try {
       navigator.geolocation.getCurrentPosition((position) => {
         const x1 = position.coords.latitude;
         const y1 = position.coords.longitude;
-        console.log(x1 + " " + y1);
-
         restaurants.forEach((restaurant) => {
-          console.log(restaurant);
           let x2 = restaurant.location.coordinates[1];
           let y2 = restaurant.location.coordinates[0];
           restaurant.distance = Math.sqrt(

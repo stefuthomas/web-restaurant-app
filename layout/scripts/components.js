@@ -315,7 +315,6 @@ export async function getAvatar(data, token) {
       }
     );
     if (!response.ok) {
-      console.log("Error: ", response);
       return "/layout/styles/images/default-avatar.jpg";
     } else {
       const avatar = await response.blob();
