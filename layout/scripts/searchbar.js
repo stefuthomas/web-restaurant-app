@@ -66,6 +66,12 @@ function openModal(restaurant) {
 
 function notFoundContent(modalContent) {
   const search = searchbarInput.value;
+  
+  const span = document.createElement("span");
+  span.classList.add("close");
+  span.textContent = "×";
+  modalContent.appendChild(span);
+
   const notFoundText = document.createElement("h3");
   notFoundText.textContent = `No restaurants for search: "${search}"`;
   modalContent.appendChild(notFoundText);
@@ -89,6 +95,7 @@ function notFoundContent(modalContent) {
 
   if (found) {
     const suggestedRestaurants = document.createElement("h3");
+
     suggestedRestaurants.textContent = "Did you mean:";
     suggestedRestaurants.classList.add("suggested");
     modalContent.appendChild(suggestedRestaurants);

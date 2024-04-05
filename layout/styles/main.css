@@ -197,7 +197,7 @@ body {
   .header form {
     display: flex;
     justify-content: center;
-    width: 90%;
+    width: 50%;
   }
 
   .header input {
@@ -236,6 +236,7 @@ body {
     width: 100%;
     margin-top: 1rem;
     margin: auto;
+    margin-bottom: 1rem;
   }
 
   .user-data .user-avatar {
