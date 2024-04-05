@@ -182,7 +182,7 @@ body {
   justify-content: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .header {
     width: 95%;
     font-size: 0.5rem;
@@ -221,16 +221,21 @@ body {
   }
 
   .info-and-profile {
+    margin-top: 100px;
     flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .info {
     width: 100%;
+    margin-bottom: 1rem;
   }
 
   .profile {
     width: 100%;
     margin-top: 1rem;
+    margin: auto;
   }
 
   .user-data .user-avatar {

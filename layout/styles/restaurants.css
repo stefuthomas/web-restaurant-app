@@ -14,7 +14,7 @@
 
 .restaurants-header {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -261,14 +261,79 @@
   z-index: 500;
 }
 
-/* Existing CSS... */
-
-/* Styles for phone screens */
-@media (max-width: 600px) {
+@media (max-width: 1600px) {
   .restaurants {
+    margin-left: 1.95rem;
+    margin-right: 1.95rem;
+  }
+
+  .restaurants select {
+    width: 100%;
+  }
+
+  .restaurants-header {
+    flex-direction: flex;
+    align-items: flex-start;
+  }
+
+  .restaurants h3 {
+    font-size: 1.2rem;
+  }
+
+  .restaurants th,
+  .restaurants td {
+    padding: 0.2em 0.5em;
+  }
+
+  .scrollable-table {
+    height: 30rem;
+  }
+
+  #sort-select {
+    width: 5rem;
     margin-left: 0.5rem;
-    margin-right: 0.5rem;
+  }
+
+  .modal-content {
+    width: 45;
+  }
+
+  .modal-content h3,
+  .modal-content .suggested {
+    font-size: 1.2rem;
+  }
+
+  .courses-table {
+    height: 10rem;
+  }
+
+  .menu-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu-buttons button {
+    width: auto;
+    margin-bottom: 1rem;
+  }
+
+  .restaurant-name {
+    font-size: 1.2rem;
+  }
+
+  .popup-content h3 {
+    font-size: 1rem;
+  }
+
+  #map {
+    height: 30rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .restaurants {
     display: block;
+    margin: auto;
   }
 
   .restaurants select {
@@ -284,7 +349,8 @@
     font-size: 1.2rem;
   }
 
-  .restaurants th, .restaurants td {
+  .restaurants th,
+  .restaurants td {
     padding: 0.2em 0.5em;
   }
 
@@ -298,14 +364,18 @@
   }
 
   .modal-content {
-    width: 90%;
+    width: 75%;
+    height: 50%;
   }
 
-  .modal-content h3, .modal-content .suggested {
+  .modal-content h3,
+  .modal-content .suggested {
     font-size: 1.2rem;
+    margin: 0;
   }
 
-  .modal-content .matching-restaurants-list, .modal-content .suggestions-list {
+  .modal-content .matching-restaurants-list,
+  .modal-content .suggestions-list {
     font-size: 1rem;
   }
 
@@ -314,11 +384,13 @@
   }
 
   .menu-buttons {
-    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    width: 20rem;
   }
 
   .menu-buttons button {
-    width: 100%;
+    width: rem;
     margin-bottom: 1rem;
   }
 
