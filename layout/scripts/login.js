@@ -36,9 +36,6 @@ async function login(username, password) {
       window.location.href = "index.html";
     }, 2000);
   } else {
-    setTimeout(() => {
-      window.location.reload();
-    }, 2000);
 
     loginMessage.innerHTML = data.message + "!";
     loginMessage.style.color = "red";

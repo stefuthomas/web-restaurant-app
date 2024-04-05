@@ -57,7 +57,6 @@ export async function getDailyMenu(id) {
     console.log("Error: ", error);
   }
 }
-
 export async function getWeeklyMenu(id) {
   try {
     const response = await fetch(
@@ -80,6 +79,15 @@ export function createModalContent(restaurant) {
   while (modalContent.firstChild) {
     modalContent.removeChild(modalContent.firstChild);
   }
+
+  const span = document.createElement("span");
+  span.classList.add("close");
+  span.textContent = "×";
+  modalContent.appendChild(span);
+
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
   
   const restaurantName = document.createElement("h2");
   restaurantName.classList.add("restaurant-name");
@@ -197,7 +205,6 @@ export function createWeeklyMenu(restaurantId, modalContent) {
     }
   });
 }
-
 export function createDailyMenu(restaurantId, modalContent) {
   const courses = getDailyMenu(restaurantId);
   courses.then((data) => {
