@@ -1,17 +1,26 @@
 body {
-  margin-top: 5rem;
   background-color: rgba(233, 209, 179, 0.774);
 }
 
-
 .header {
-  color: coral;
-  font-family: "heading", sans-serif;
   display: flex;
   flex-direction: column;
-  margin: 1 auto;
-  margin-top: 1rem;
   align-items: center;
+}
+
+.header h1 {
+  font-family: "header", sans-serif;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 50rem;
+  background-color: antiquewhite;
+  color: coral;
+  border: 2px solid coral;
+  border-radius: 10px;
+  cursor: pointer;
 }
 .user {
   width: 50rem;
@@ -27,6 +36,16 @@ body {
 
 .main {
   width: auto;
+}
+
+.user h2 {
+  font-family: "heading", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: coral;
+  display: flex;
+  justify-content: center;
+
 }
 
 .avatar {
@@ -101,7 +120,7 @@ body {
 
 #edit-form input {
   font-family: "text-light", sans-serif;
-  width: 20rem;
+  width: 15rem;
   font-size: 1rem;
   border: none;
   font-style: italic;
@@ -113,7 +132,7 @@ body {
 #favourite-restaurant {
   font-family: "text-light", sans-serif;
   font-size: 1rem;
-  width: 20rem;
+  width: 15rem;
   border: none;
   font-style: italic;
   border-radius: 5px;
@@ -167,4 +186,25 @@ body {
 
 .save-changes:hover {
   background-color: rgb(255, 68, 0);
+}
+
+
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 1.5rem;
+    width: 90%;
+  }
+  .user {
+    width: 90%;
+    height: auto;
+  }
+
+  .avatar {
+    height: 100px;
+    width: 100px;
+  }
+
+  .edit-profile-header {
+    font-size: 1rem;
+  }
 }

@@ -1,9 +1,11 @@
 .restaurants {
   display: flex;
   flex-direction: row;
-  width: 90rem;
+  width: auto;
   margin: auto;
   margin-top: 20px;
+  margin-left: 14rem;
+  margin-right: 14rem;
   border-radius: 2px;
   border-radius: 10px;
   box-shadow: 0 0 5px 5px rgba(206, 178, 163, 0.404);
@@ -257,4 +259,78 @@
   leaflet-touch-drag
   leaflet-touch-zoom {
   z-index: 500;
+}
+
+/* Existing CSS... */
+
+/* Styles for phone screens */
+@media (max-width: 600px) {
+  .restaurants {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    display: block;
+  }
+
+  .restaurants select {
+    width: 100%;
+  }
+
+  .restaurants-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .restaurants h3 {
+    font-size: 1.2rem;
+  }
+
+  .restaurants th, .restaurants td {
+    padding: 0.2em 0.5em;
+  }
+
+  #sort-select {
+    width: 5rem;
+    margin-left: 0.5rem;
+  }
+
+  .scrollable-table {
+    height: 30rem;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+
+  .modal-content h3, .modal-content .suggested {
+    font-size: 1.2rem;
+  }
+
+  .modal-content .matching-restaurants-list, .modal-content .suggestions-list {
+    font-size: 1rem;
+  }
+
+  .courses-table {
+    height: 10rem;
+  }
+
+  .menu-buttons {
+    flex-direction: column;
+  }
+
+  .menu-buttons button {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .restaurant-name {
+    font-size: 1.2rem;
+  }
+
+  .popup-content h3 {
+    font-size: 1rem;
+  }
+
+  #map {
+    height: 30rem;
+  }
 }

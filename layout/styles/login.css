@@ -4,17 +4,19 @@ body {
   justify-content: center;
   align-items: center;
   height: 75vh;
-  margin: 0;
 }
 
 main {
-  width: 100%;
+  width: auto;
+  margin-left: 5rem;
+  margin-right: 5rem;
+
 }
 
 .login {
   display: flex;
   justify-content: center;
-  width: 25%;
+  width: auto;
   margin: 0 auto;
   padding: 10px;
   border: 2px solid coral;
@@ -30,6 +32,7 @@ main {
   font-size: 2rem;
   font-weight: 700;
   color: coral;
+  cursor: pointer;
 }
 
 .login form {
@@ -52,7 +55,7 @@ main {
 }
 
 .login button {
-  width: 15%;
+  width: 4rem;
   font-family: "buttons", sans-serif;
   font-size: 1rem;
   background-color: coral;

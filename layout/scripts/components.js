@@ -4,6 +4,22 @@ export const span = document.getElementsByClassName("close")[0];
 
 import { createRestaurantDetailElement } from "/layout/scripts/restaurants.js";
 
+export async function getRestaurant(id) {
+  try {
+    const response = await fetch(
+      `https://10.120.32.94/restaurant/api/v1/restaurants/${id}`
+    );
+    if (!response.ok) {
+      throw new Error("HTTP error, status = " + response.status);
+    } else {
+      const data = await response.json();
+      return data;
+    }
+  } catch (error) {
+    console.log("Error: ", error);
+  }
+}
+
 export async function getRestaurants() {
   try {
     const response = await fetch(
@@ -64,7 +80,7 @@ export function createModalContent(restaurant) {
   while (modalContent.firstChild) {
     modalContent.removeChild(modalContent.firstChild);
   }
-
+  
   const restaurantName = document.createElement("h2");
   restaurantName.classList.add("restaurant-name");
   restaurantName.textContent = restaurant.name;
@@ -260,110 +276,7 @@ export function createDailyMenu(restaurantId, modalContent) {
   });
 }
 
-export function clearAccountButtons() {
-  const accountButtons = document.querySelector(".account-buttons");
-  while (accountButtons.firstChild) {
-    accountButtons.removeChild(accountButtons.firstChild);
-  }
-}
-
-export function createLogoutButton() {
-  const accountButtons = document.querySelector(".account-buttons");
-  const logoutButton = document.createElement("button");
-  logoutButton.textContent = "Logout";
-  logoutButton.addEventListener("click", () => {
-    sessionStorage.clear();
-    window.location.href = "index.html";
-  });
-  accountButtons.appendChild(logoutButton);
-}
-
-export function createProfileButton() {
-  const accountButtons = document.querySelector(".account-buttons");
-  const profileButton = document.createElement("button");
-  profileButton.textContent = "Profile";
-  accountButtons.appendChild(profileButton);
-  profileButton.addEventListener("click", () => {
-    window.location.href = "editprofile.html";
-  });
-}
-
-export function createUserData(loggedIn) {
-  const profile = document.getElementById("profile-info");
-  const userData = document.createElement("div");
-  userData.classList.add("user-data");
-
-  if (loggedIn) {
-    const data = JSON.parse(sessionStorage.getItem("data"));
-    const token = sessionStorage.getItem("token");
-
-    const avatar = document.createElement("img");
-
-    if (!data.data.avatar) {
-      avatar.src = "/layout/styles/images/default-avatar.jpg";
-    } else {
-      getAvatar(data, token)
-        .then((url) => {
-          avatar.src = url;
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-    avatar.alt = "User avatar";
-    avatar.classList.add("user-avatar");
-    userData.appendChild(avatar);
-
-    const account = document.createElement("h3");
-    account.textContent = data.data.username;
-    userData.appendChild(account);
-
-    const favouriteRestaurantDiv = document.createElement("div");
-    favouriteRestaurantDiv.classList.add("favourite-restaurant");
-
-    const favouriteRestaurantText = document.createElement("p");
-    favouriteRestaurantText.textContent = "Favourite restaurant: ";
-    favouriteRestaurantDiv.appendChild(favouriteRestaurantText);
-
-    const favouriteRestaurant = document.createElement("a");
-    favouriteRestaurant.textContent =
-      data.data.favouriteRestaurant != null
-        ? data.data.favouriteRestaurant.classList.add("link")
-        : "Favourite restaurant not specified yet.";
-
-    favouriteRestaurantDiv.appendChild(favouriteRestaurant);
-
-    userData.appendChild(favouriteRestaurantDiv);
-
-    const profileLink = document.createElement("a");
-    profileLink.textContent = "Edit profile";
-    profileLink.classList.add("link");
-    profileLink.href = "editprofile.html";
-    userData.appendChild(profileLink);
-  } else {
-    const loginMessage = document.createElement("p");
-    loginMessage.innerHTML = "Please login to view your profile&nbsp;";
-    const loginLink = document.createElement("a");
-    loginLink.classList.add("link");
-    loginLink.textContent = "here.";
-    loginLink.href = "login.html";
-    loginMessage.appendChild(loginLink);
-    userData.appendChild(loginMessage);
-
-    const signupMessage = document.createElement("p");
-    signupMessage.innerHTML = "Don't have an account? &nbsp;";
-    const signupLink = document.createElement("a");
-    signupLink.classList.add("link");
-    signupLink.textContent = "Sign up for free!";
-    signupLink.href = "signup.html";
-    signupMessage.appendChild(signupLink);
-    userData.appendChild(signupMessage);
-  }
-
-  profile.appendChild(userData);
-}
-
-export async function uploadProfilePicture(file, token,) {
+export async function uploadProfilePicture(file, token) {
   const formData = new FormData();
   formData.append("avatar", file);
   try {
@@ -417,7 +330,7 @@ export async function updateUserInfo(change, changeType, token) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          [changeType] : change,
+          [changeType]: change,
         }),
       }
     );

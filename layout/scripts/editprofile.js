@@ -1,7 +1,6 @@
 import {
   uploadProfilePicture,
   getAvatar,
-  getRestaurants,
   updateUserInfo,
 } from "/layout/scripts/components.js";
 
@@ -64,17 +63,6 @@ function formsInit() {
   usernameInput.placeholder = data.data.username;
   emailInput.placeholder = data.data.email;
 
-  const restaurants = getRestaurants();
-  restaurants.then((data) => {
-    const select = form.querySelector("#favourite-restaurant");
-    data.forEach((restaurant) => {
-      const option = document.createElement("option");
-      option.value = restaurant._id;
-      option.innerHTML = restaurant.name;
-      select.appendChild(option);
-    });
-  });
-
   const saveUsername = form.querySelector("#save-username");
 
   saveUsername.addEventListener("click", async (e) => {
@@ -114,4 +102,57 @@ function formsInit() {
       saveStatus.style.color = "red";
     }
   });
+
+  const favouriteRestaurantSelect = form.querySelector("#favourite-restaurant");
+
+  createSelectOptions(favouriteRestaurantSelect);
+
+  const saveFavoriteRestaurant = form.querySelector(
+    "#save-favourite-restaurant"
+  );
+  saveFavoriteRestaurant.addEventListener("click", async (e) => {
+    e.preventDefault();
+    if (favouriteRestaurantSelect.value === "Select a restaurant") {
+      saveStatus.innerHTML = "Please select a restaurant!";
+      saveStatus.style.color = "red";
+      return;
+    } else {
+      const success = await updateUserInfo(
+        favouriteRestaurantSelect.value,
+        "favouriteRestaurant",
+        token
+      );
+      if (success) {
+        saveStatus.innerHTML = "Favourite restaurant updated!";
+        saveStatus.style.color = "green";
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
+      } else {
+        saveStatus.innerHTML = "Error updating favourite restaurant!";
+        saveStatus.style.color = "red";
+      }
+    }
+  });
+}
+
+async function createSelectOptions(select) {
+  try {
+    const response = await fetch(
+      "https://10.120.32.94/restaurant/api/v1/restaurants"
+    );
+    if (!response.ok) {
+      throw new Error("Error fetching data");
+    } else {
+      const data = await response.json();
+      data.forEach((restaurant) => {
+        const option = document.createElement("option");
+        option.value = restaurant._id;
+        option.innerHTML = restaurant.name;
+        select.appendChild(option);
+      });
+    }
+  } catch (error) {
+    console.error(error);
+  }
 }

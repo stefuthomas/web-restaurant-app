@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/layout/styles/fonts.css" />
-    <link rel="stylesheet" href="/layout/styles/login.css" />
+    <link rel="stylesheet" href="/layout/styles/fonts.css">
+    <link rel="stylesheet" href="/layout/styles/login.css">
     <script src="/layout/scripts/login.js" defer></script>
   </head>
   <body>
     <div class="login">
       <main>
-        <h1>MunchFinder</h1>
+        <h1 onclick="window.location.href='index.html'">MunchFinder</h1>
         <div class="login-form">
           <form id="login-form">
-            <input type="text" name="username" placeholder="Username" />
-            <input type="password" name="password" placeholder="Password" />
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
             <button type="submit">Login</button>
           </form>
         </div>
         <div class="dont-have-account">
-          <a
-            >Don't have an account? <a class="link" href="signup.html">Sign up</a></a
-          >
+          <span>Don't have an account? <a class="link" href="signup.html">Sign up</a></span>
         </div>
         <p id="login-status"></p>
       </main>

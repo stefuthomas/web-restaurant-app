@@ -8,13 +8,15 @@ body {
 }
 
 main {
-    width: 100%;
+    width: auto;
+    margin-left: 5rem;
+    margin-right: 5rem;
 }
 
 .signup {
     display: flex;
     justify-content: center;
-    width: 25%;
+    width: auto;
     margin: 0 auto;
     padding: 10px;
     border: 2px solid coral;
@@ -24,6 +26,7 @@ main {
 }
 
 .signup h1 {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     font-family: "header", sans-serif;
@@ -52,7 +55,7 @@ main {
 }
 
 .signup button {
-    width: 20%;
+    width: 6rem;
     font-family: "buttons", sans-serif;
     font-size: 1rem;
     background-color: coral;
