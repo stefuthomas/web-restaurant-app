@@ -363,7 +363,7 @@ export function createUserData(loggedIn) {
   profile.appendChild(userData);
 }
 
-export async function uploadProfilePicture(file, token) {
+export async function uploadProfilePicture(file, token,) {
   const formData = new FormData();
   formData.append("avatar", file);
   try {
@@ -378,26 +378,24 @@ export async function uploadProfilePicture(file, token) {
       }
     );
     let data = await response.json();
-    console.log(data);
+    sessionStorage.setItem("data", JSON.stringify(data));
   } catch (error) {
     console.log("Error: ", error);
   }
 }
 
 export async function getAvatar(data, token) {
-  console.log(data.data.avatar);
   try {
     const response = await fetch(
-      `https://10.120.32.94/uploads/${data.data.avatar}`,
+      `https://10.120.32.94/restaurant/uploads/${data.data.avatar}`,
       {
-        method: "GET",
-        mode: "no-cors",
         headers: {
           Authorization: `Bearer ${token}`,
         },
       }
     );
     if (!response.ok) {
+      console.log("Error: ", response);
       return "/layout/styles/images/default-avatar.jpg";
     } else {
       const avatar = await response.blob();
@@ -408,7 +406,7 @@ export async function getAvatar(data, token) {
   }
 }
 
-export async function uploadNewUsername(username, token) {
+export async function updateUserInfo(change, changeType, token) {
   try {
     const response = await fetch(
       "https://10.120.32.94/restaurant/api/v1/users",
@@ -419,7 +417,7 @@ export async function uploadNewUsername(username, token) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          username: username
+          [changeType] : change,
         }),
       }
     );
@@ -427,7 +425,7 @@ export async function uploadNewUsername(username, token) {
     let data = await response.json();
 
     if (response.ok) {
-      console.log(data);
+      sessionStorage.setItem("data", JSON.stringify(data));
       return true;
     } else {
       console.log(data);
@@ -437,35 +435,3 @@ export async function uploadNewUsername(username, token) {
     console.log("Error: ", error);
   }
 }
-
-
-export async function uploadNewEmail(email, token) {
-  try {
-    const response = await fetch(
-      "https://10.120.32.94/restaurant/api/v1/users",
-      {
-        method: "PUT",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email
-        }),
-      }
-    );
-
-    let data = await response.json();
-
-    if (response.ok) {
-      console.log(data);
-      return true;
-    } else {
-      console.log(data);
-      return false;
-    }
-  } catch (error) {
-    console.log("Error: ", error);
-  }
-}
-

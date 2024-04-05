@@ -2,8 +2,7 @@ import {
   uploadProfilePicture,
   getAvatar,
   getRestaurants,
-  uploadNewUsername,
-  uploadNewEmail
+  updateUserInfo,
 } from "/layout/scripts/components.js";
 
 let token, data;
@@ -48,6 +47,9 @@ changeAvatarButton.addEventListener("click", () => {
 
 fileInput.addEventListener("change", function () {
   uploadProfilePicture(fileInput.files[0], token);
+  setTimeout(() => {
+    window.location.reload();
+  }, 2000);
 });
 
 let form;
@@ -80,10 +82,13 @@ function formsInit() {
     const usernameInput = form.querySelector("#username");
     const username = usernameInput.value;
 
-    const success = await uploadNewUsername(username, token);
+    const success = await updateUserInfo(username, "username", token);
     if (success) {
       saveStatus.innerHTML = "Username updated!";
       saveStatus.style.color = "green";
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
     } else {
       saveStatus.innerHTML = "Username already in use!";
       saveStatus.style.color = "red";
@@ -97,10 +102,13 @@ function formsInit() {
     const emailInput = form.querySelector("#email");
     const email = emailInput.value;
 
-    const success = await uploadNewEmail(email, token);
+    const success = await updateUserInfo(email, "email", token);
     if (success) {
       saveStatus.innerHTML = "Email updated!";
       saveStatus.style.color = "green";
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
     } else {
       saveStatus.innerHTML = "Email already in use!";
       saveStatus.style.color = "red";
