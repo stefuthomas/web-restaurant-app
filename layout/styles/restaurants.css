@@ -1,15 +1,9 @@
 .restaurants {
   display: flex;
   flex-direction: row;
-  width: auto;
+  justify-content: center;
   margin: auto;
   margin-top: 20px;
-  margin-left: 14rem;
-  margin-right: 14rem;
-  border-radius: 2px;
-  border-radius: 10px;
-  box-shadow: 0 0 5px 5px rgba(206, 178, 163, 0.404);
-  background-color: antiquewhite;
 }
 
 .restaurants-header {
@@ -34,14 +28,22 @@
 }
 
 .restaurants section {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 5px rgba(206, 178, 163, 0.404);
+  background-color: antiquewhite;
+  width: 44.75rem;
+}
+
+#table-section {
+  margin-right: 0.25rem;
+}
+
+#map-section {
+  margin-left: 0.25rem;
 }
 
 .restaurants h3 {
   font-family: "heading", sans-serif;
-  font-size: 1.5rem;
   font-weight: bold;
   color: coral;
   display: flex;
@@ -195,7 +197,6 @@
 
 .restaurant-name {
   font-family: "heading", sans-serif;
-  font-size: 1.5rem;
   font-weight: bold;
   color: coral;
   display: flex;
@@ -240,7 +241,7 @@
 #map {
   width: 100%;
   height: 50rem;
-  border-bottom-right-radius: 10px;
+  border-radius: 10px;
 }
 
 .leaflet-control-zoom leaflet-bar leaflet-control {
@@ -262,17 +263,11 @@
 }
 
 @media (max-width: 1600px) {
-  .restaurants {
-    margin-left: 1.95rem;
-    margin-right: 1.95rem;
-  }
-
   .restaurants select {
     width: 100%;
   }
 
   .restaurants-header {
-    flex-direction: flex;
     align-items: flex-start;
   }
 
@@ -330,18 +325,27 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 430px) {
   .restaurants {
     display: block;
     margin: auto;
+    width: 414px;
   }
 
+  #table-section {
+    width: 100%;
+  }
+
+  #map-section {
+    display: none;
+
+  }
   .restaurants select {
     width: 100%;
   }
 
   .restaurants-header {
-    flex-direction: column;
+    display: flex;
     align-items: flex-start;
   }
 
@@ -360,7 +364,7 @@
   }
 
   .scrollable-table {
-    height: 30rem;
+    height: 10rem;
   }
 
   .modal-content {
@@ -403,6 +407,6 @@
   }
 
   #map {
-    height: 30rem;
+    height: 10rem;
   }
 }
