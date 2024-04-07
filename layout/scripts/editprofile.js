@@ -48,7 +48,7 @@ fileInput.addEventListener("change", function () {
   uploadProfilePicture(fileInput.files[0], token);
   setTimeout(() => {
     window.location.reload();
-  }, 2000);
+  }, 1000);
 });
 
 let form;
@@ -76,7 +76,7 @@ function formsInit() {
       saveStatus.style.color = "green";
       setTimeout(() => {
         window.location.reload();
-      }, 2000);
+      }, 1000);
     } else {
       saveStatus.innerHTML = "Username already in use!";
       saveStatus.style.color = "red";
@@ -96,7 +96,7 @@ function formsInit() {
       saveStatus.style.color = "green";
       setTimeout(() => {
         window.location.reload();
-      }, 2000);
+      }, 1000);
     } else {
       saveStatus.innerHTML = "Email already in use!";
       saveStatus.style.color = "red";
@@ -127,11 +127,8 @@ function formsInit() {
         saveStatus.style.color = "green";
         setTimeout(() => {
           window.location.reload();
-        }, 2000);
-      } else {
-        saveStatus.innerHTML = "Error updating favourite restaurant!";
-        saveStatus.style.color = "red";
-      }
+        }, 1000);
+      } 
     }
   });
 }
