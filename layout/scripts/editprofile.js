@@ -2,7 +2,7 @@ import {
   uploadProfilePicture,
   getAvatar,
   updateUserInfo,
-} from "/layout/scripts/components.js";
+} from "../scripts/components.js";
 
 let token, data;
 window.onload = function () {
@@ -128,7 +128,7 @@ function formsInit() {
         setTimeout(() => {
           window.location.reload();
         }, 1000);
-      } 
+      }
     }
   });
 }

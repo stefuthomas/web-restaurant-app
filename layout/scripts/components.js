@@ -2,7 +2,7 @@ export const restaurants = [];
 export const modal = document.getElementById("myModal");
 export const span = document.getElementsByClassName("close")[0];
 
-import { createRestaurantDetailElement } from "/layout/scripts/restaurants.js";
+import { createRestaurantDetailElement } from "../scripts/restaurants.js";
 
 export async function getRestaurant(id) {
   try {
@@ -88,7 +88,7 @@ export function createModalContent(restaurant) {
   span.onclick = function () {
     modal.style.display = "none";
   };
-  
+
   const restaurantName = document.createElement("h2");
   restaurantName.classList.add("restaurant-name");
   restaurantName.textContent = restaurant.name;

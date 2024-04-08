@@ -5,7 +5,7 @@ import {
   createDailyMenu,
   createWeeklyMenu,
   restaurants,
-} from "/layout/scripts/components.js";
+} from "../scripts/components.js";
 
 const searchbarInput = document.querySelector(".searchbar input");
 searchbarInput.addEventListener("keydown", (e) => {
@@ -66,7 +66,7 @@ function openModal(restaurant) {
 
 function notFoundContent(modalContent) {
   const search = searchbarInput.value;
-  
+
   const span = document.createElement("span");
   span.classList.add("close");
   span.textContent = "×";

@@ -6,7 +6,7 @@ import {
   span,
   createDailyMenu,
   createWeeklyMenu,
-} from "/layout/scripts/components.js";
+} from "../scripts/components.js";
 
 function createTableRow(restaurant) {
   const row = document.createElement("tr");
