@@ -290,7 +290,7 @@
   }
 
   .modal-content {
-    width: 45;
+    width: 45rem;
   }
 
   .modal-content h3,
@@ -329,7 +329,7 @@
   .restaurants {
     display: block;
     margin: auto;
-    width: 414px;
+    width: 400px;
   }
 
   #table-section {
@@ -355,7 +355,8 @@
 
   .restaurants th,
   .restaurants td {
-    padding: 0.2em 0.5em;
+    width: auto;
+    height: auto;
   }
 
   #sort-select {
@@ -394,7 +395,7 @@
   }
 
   .menu-buttons button {
-    width: rem;
+    width: auto;
     margin-bottom: 1rem;
   }
 

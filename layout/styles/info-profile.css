@@ -180,24 +180,24 @@ header input {
 }
 
 @media (max-width: 430px) {
-  .header {
-    width: 414px;
+  header {
+    width: 400px;
     font-size: 0.5rem;
     align-items: flex-start;
   }
 
-  .header h1 {
+  header h1 {
     margin: auto;
     font-size: 1.25rem;
   }
 
-  .header form {
+  header form {
     display: flex;
     justify-content: center;
     width: 50%;
   }
 
-  .header input {
+  header input {
     display: flex;
     justify-content: center;
     font-size: 1rem;
@@ -218,7 +218,7 @@ header input {
   }
 
   .info-and-profile {
-    margin-top: 100px;
+    margin-top: 30px;
     flex-direction: column;
     margin-left: 0;
     margin-right: 0;
