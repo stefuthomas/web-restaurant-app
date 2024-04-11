@@ -2,8 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: auto;
-  margin-top: 20px;
+  margin: 20px auto auto;
 }
 
 .restaurants-header {
@@ -36,10 +35,6 @@
 
 #table-section {
   margin-right: 0.25rem;
-}
-
-#map-section {
-  margin-left: 0.25rem;
 }
 
 .restaurants h3 {
@@ -203,65 +198,6 @@
   justify-content: center;
 }
 
-.leaflet-popup-content-wrapper {
-  background-color: antiquewhite;
-  border-radius: 10px;
-}
-
-.popup-content h3 {
-  font-family: "heading", sans-serif;
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: coral;
-  display: flex;
-  justify-content: center;
-}
-
-.popup-content .popup-buttons {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin: auto;
-}
-
-.popup-buttons button {
-  font-family: "buttons", sans-serif;
-  background-color: coral;
-  color: white;
-  border: 1px solid white;
-  padding: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.popup-buttons button:hover {
-  background-color: rgb(255, 68, 0);
-}
-
-#map {
-  width: 100%;
-  height: 50rem;
-  border-radius: 10px;
-}
-
-.leaflet-control-zoom leaflet-bar leaflet-control {
-  display: none;
-}
-
-.leaflet-control-container {
-  display: none;
-}
-
-.leaflet-container
-  leaflet-touch
-  leaflet-retina
-  leaflet-fade-anim
-  leaflet-grab
-  leaflet-touch-drag
-  leaflet-touch-zoom {
-  z-index: 500;
-}
-
 @media (max-width: 1600px) {
   .restaurants select {
     width: 100%;
@@ -315,14 +251,6 @@
   .restaurant-name {
     font-size: 1.2rem;
   }
-
-  .popup-content h3 {
-    font-size: 1rem;
-  }
-
-  #map {
-    height: 30rem;
-  }
 }
 
 @media (max-width: 430px) {
@@ -336,10 +264,6 @@
     width: 100%;
   }
 
-  #map-section {
-    display: none;
-
-  }
   .restaurants select {
     width: 100%;
   }
