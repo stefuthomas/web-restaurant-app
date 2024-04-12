@@ -1,13 +1,10 @@
 body {
   background-color: rgba(233, 209, 179, 0.774);
+  margin-top: 0;
 }
 
-.header {
-  position: fixed;
+header {
   z-index: 1000;
-  top: 0;
-  left: 0;
-  right: 0;
   width: 90rem;
   max-width: 95rem;
   background-color: antiquewhite;
@@ -15,18 +12,18 @@ body {
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
-  margin-top: 1rem;
   border: 2px solid coral;
-  border-radius: 10px;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
 }
-.header h1 {
+header h1 {
   font-family: "header", sans-serif;
   font-size: 2rem;
   font-weight: 700;
   color: coral;
 }
 
-.header input {
+header input {
   font-family: "header", sans-serif;
   font-size: 1rem;
   padding: 5px;
@@ -70,7 +67,7 @@ body {
 .info-and-profile {
   display: flex;
   justify-content: center;
-  margin-top: 125px;
+  margin-top: 20px;
 }
 
 .info {
@@ -161,9 +158,8 @@ body {
 }
 
 .favourite-restaurant a {
-  margin: auto;
   justify-content: left;
-  margin-left: 0.5rem;
+  margin: auto auto auto 0.5rem;
 }
 
 .link {
@@ -181,24 +177,24 @@ body {
 }
 
 @media (max-width: 430px) {
-  .header {
-    width: 414px;
+  header {
+    width: 400px;
     font-size: 0.5rem;
     align-items: flex-start;
   }
 
-  .header h1 {
+  header h1 {
     margin: auto;
     font-size: 1.25rem;
   }
 
-  .header form {
+  header form {
     display: flex;
     justify-content: center;
     width: 50%;
   }
 
-  .header input {
+  header input {
     display: flex;
     justify-content: center;
     font-size: 1rem;
@@ -209,7 +205,6 @@ body {
   .account-buttons {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    size: 0.5rem;
     display: flex;
     justify-content: center;
   }
@@ -219,7 +214,7 @@ body {
   }
 
   .info-and-profile {
-    margin-top: 100px;
+    margin-top: 30px;
     flex-direction: column;
     margin-left: 0;
     margin-right: 0;
@@ -232,9 +227,7 @@ body {
 
   .profile {
     width: 100%;
-    margin-top: 1rem;
-    margin: auto;
-    margin-bottom: 1rem;
+    margin: auto auto 1rem;
   }
 
   .user-data .user-avatar {
