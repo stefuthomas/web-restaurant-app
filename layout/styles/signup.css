@@ -1,5 +1,5 @@
 body {
-    background-color: antiquewhite;
+    background-color: #faf6e9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,10 +19,10 @@ main {
     width: auto;
     margin: 0 auto;
     padding: 10px;
-    border: 2px solid coral;
+    border: 2px solid #494949;
     border-radius: 10px;
-    box-shadow: 0 0 5px 5px rgba(206, 178, 163, 0.404);
-    background-color: antiquewhite;
+    box-shadow: 0 0 10px 4px rgba(129, 129, 129, 0.4);
+    background-color: #fffdf6;
 }
 
 .signup h1 {
@@ -32,7 +32,7 @@ main {
     font-family: "header", sans-serif;
     font-size: 2rem;
     font-weight: 700;
-    color: coral;
+    color: #494949;
 }
 
 .signup form {
@@ -51,14 +51,14 @@ main {
     font-style: italic;
     padding: 5px;
     border-radius: 5px;
-    border: 1px solid coral;
+    border: 1px solid #494949;
 }
 
 .signup button {
     width: 6rem;
     font-family: "buttons", sans-serif;
     font-size: 1rem;
-    background-color: coral;
+    background-color: #494949;
     color: white;
     margin-top: 1rem;
     border: 1px solid white;
@@ -87,5 +87,5 @@ main {
     font-family: "text-light", sans-serif;
     font-style: italic;
     text-decoration: none;
-    color: coral;
+    color: #494949;
   }

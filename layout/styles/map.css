@@ -11,7 +11,7 @@
     font-family: "heading", sans-serif;
     font-size: 1.25rem;
     font-weight: bold;
-    color: coral;
+    color: #494949;
     display: flex;
     justify-content: center;
 }
@@ -25,7 +25,7 @@
 
 .popup-buttons button {
     font-family: "buttons", sans-serif;
-    background-color: coral;
+    background-color: #494949;
     color: white;
     border: 1px solid white;
     padding: 5px;
@@ -34,7 +34,7 @@
 }
 
 .popup-buttons button:hover {
-    background-color: rgb(255, 68, 0);
+    background-color: #707070
 }
 
 #map {

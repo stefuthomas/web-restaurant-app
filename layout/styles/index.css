@@ -1,5 +1,5 @@
 body {
-  background-color: rgba(233, 209, 179, 0.774);
+  background-color: #faf6e9;
   margin-top: 0;
 }
 
@@ -7,20 +7,21 @@ header {
   z-index: 1000;
   width: 90rem;
   max-width: 95rem;
-  background-color: antiquewhite;
+  background-color: #fffdf6;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
-  border: 2px solid coral;
+  border: 2px solid #494949;
   border-top: none;
   border-radius: 0 0 10px 10px;
+  box-shadow: 0 0 10px 4px rgba(129, 129, 129, 0.4);
 }
 header h1 {
   font-family: "header", sans-serif;
   font-size: 2rem;
   font-weight: 700;
-  color: coral;
+  color: #494949;
 }
 
 header input {
@@ -28,7 +29,8 @@ header input {
   font-size: 1rem;
   padding: 5px;
   border-radius: 5px;
-  border: 1px solid coral;
+  border: 1px solid #494949;
+  background-color: #ece8d9;
   width: 300px;
 }
 .account-buttons {
@@ -37,22 +39,10 @@ header input {
   width: 140px;
 }
 
-.account-buttons .logout-button {
-  font-family: "buttons", sans-serif;
-  font-size: 1rem;
-  margin: auto;
-  background-color: coral;
-  color: white;
-  border: 1px solid white;
-  padding: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .account-buttons button {
   font-family: "buttons", sans-serif;
   font-size: 1rem;
-  background-color: coral;
+  background-color: #494949;
   color: white;
   border: 1px solid white;
   padding: 5px;
@@ -61,7 +51,7 @@ header input {
 }
 
 .account-buttons button:hover {
-  background-color: rgb(255, 68, 0);
+  background-color: #707070;
 }
 
 .info-and-profile {
@@ -75,15 +65,16 @@ header input {
   align-content: center;
   margin-right: 0.25rem;
   border-radius: 10px;
-  box-shadow: 0 0 5px 5px rgba(206, 178, 163, 0.404);
-  background-color: antiquewhite;
+  box-shadow: 0 0 10px 4px rgba(129, 129, 129, 0.4);
+  border: 2px solid #494949;
+  background-color: #fffdf6;
 }
 
 .info h2 {
   font-family: "heading", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
-  color: coral;
+  color: #494949;
   display: flex;
   justify-content: center;
 }
@@ -92,7 +83,7 @@ header input {
   font-family: "text-medium", sans-serif;
   font-size: 1rem;
   font-weight: bold;
-  color: coral;
+  color: #494949;
   display: flex;
   justify-content: left;
   margin-left: 20px;
@@ -117,15 +108,16 @@ header input {
   width: 29.5rem;
   margin-left: 0.25rem;
   border-radius: 10px;
-  box-shadow: 0 0 5px 5px rgba(206, 178, 163, 0.404);
-  background-color: antiquewhite;
+  box-shadow: 0 0 10px 4px rgba(129, 129, 129, 0.4);
+  background-color: #fffdf6;
+  border: 2px solid #494949;
 }
 
 .profile h2 {
   font-family: "heading", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
-  color: coral;
+  color: #494949;
   display: flex;
   justify-content: center;
 }
@@ -134,7 +126,7 @@ header input {
   font-family: "text-medium", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
-  color: coral;
+  color: #494949;
   display: flex;
   justify-content: left;
   margin-top: 0.5rem;
@@ -166,7 +158,7 @@ header input {
   font-family: "text-light", sans-serif;
   font-style: italic;
   text-decoration: none;
-  color: coral;
+  color: #494949;
   cursor: pointer;
 }
 

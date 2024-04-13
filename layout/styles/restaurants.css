@@ -18,18 +18,19 @@
   width: 8rem;
   font-family: "text-light", sans-serif;
   font-size: 1rem;
-  color: coral;
+  color: #494949;
   margin-right: 2rem;
   margin-bottom: auto;
   margin-top: auto;
   border-radius: 5px;
-  background-color: rgb(255, 255, 255);
+  background-color: #ece8d9;
 }
 
 .restaurants section {
   border-radius: 10px;
-  box-shadow: 0 0 5px 5px rgba(206, 178, 163, 0.404);
-  background-color: antiquewhite;
+  box-shadow: 0 0 10px 4px rgba(129, 129, 129, 0.4);
+  background-color: #fffdf6;
+  border: 2px solid #494949;
   width: 44.75rem;
 }
 
@@ -40,7 +41,7 @@
 .restaurants h3 {
   font-family: "heading", sans-serif;
   font-weight: bold;
-  color: coral;
+  color: #494949;
   display: flex;
   justify-content: left;
   margin-left: 1rem;
@@ -71,7 +72,7 @@
 }
 
 .highlight {
-  background-color: rgba(255, 127, 80, 0.144);
+  background-color: #959393;
   font-weight: bold;
 }
 
@@ -95,7 +96,7 @@
 }
 
 .modal-content {
-  background-color: antiquewhite;
+  background-color: #fffdf6;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
@@ -106,7 +107,7 @@
   font-family: "heading", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
-  color: coral;
+  color: #494949;
   display: flex;
   justify-content: center;
 }
@@ -115,14 +116,14 @@
   font-family: "heading", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
-  color: coral;
+  color: #494949;
   display: flex;
   justify-content: left;
 }
 
 .modal-content .matching-restaurants-list {
   font-family: "text-medium", sans-serif;
-  color: rgba(255, 127, 80, 0.884);
+  color: #494949;
   font-size: 1.25rem;
   max-height: 15rem;
   overflow: auto;
@@ -131,13 +132,13 @@
 
 .modal-content .matching-restaurants-list li:hover {
   cursor: pointer;
-  color: coral;
+  color: #707070;
   font-weight: bold;
   list-style-type: circle;
 }
 
 .modal-content .suggestions-list {
-  color: coral;
+  color: #494949;
   font-family: "text-medium", sans-serif;
   font-size: 1.25rem;
 }
@@ -164,7 +165,7 @@
 .menu-buttons button {
   font-family: "buttons", sans-serif;
   font-size: 1rem;
-  background-color: coral;
+  background-color: #494949;
   color: white;
   border: 1px solid white;
   padding: 5px;
@@ -173,7 +174,7 @@
 }
 
 .menu-buttons button:hover {
-  background-color: rgb(255, 68, 0);
+  background-color: #707070;
 }
 
 .close {
@@ -193,7 +194,7 @@
 .restaurant-name {
   font-family: "heading", sans-serif;
   font-weight: bold;
-  color: coral;
+  color: #494949;
   display: flex;
   justify-content: center;
 }
