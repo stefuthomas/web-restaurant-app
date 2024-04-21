@@ -31,7 +31,6 @@ export function createRestaurantDetailElement(detailName, detailValue) {
 }
 try {
   const sortSelect = document.getElementById("sort-select");
-
   sortSelect.addEventListener("change", (event) => {
     const updateTable = () => {
       const tbody = document.getElementById("table-body");
@@ -95,15 +94,15 @@ function createTable() {
         dailyMenuButton.addEventListener("click", () => {
           createDailyMenu(restaurant._id, modalContent);
           dailyMenuButton.disabled = true;
-          weeklyMenuButton.disabled = false;
+          weeklyMenuSelect.disabled = false;
         });
 
-        const weeklyMenuButton = document.createElement("button");
-        weeklyMenuButton.textContent = "Weekly menu";
-        menuButtons.appendChild(weeklyMenuButton);
-        weeklyMenuButton.addEventListener("click", () => {
+        const weeklyMenuSelect = document.createElement("button");
+        weeklyMenuSelect.textContent = "Weekly menu";
+        menuButtons.appendChild(weeklyMenuSelect);
+        weeklyMenuSelect.addEventListener("click", () => {
           createWeeklyMenu(restaurant._id, modalContent);
-          weeklyMenuButton.disabled = true;
+          weeklyMenuSelect.disabled = true;
           dailyMenuButton.disabled = false;
         });
       });
