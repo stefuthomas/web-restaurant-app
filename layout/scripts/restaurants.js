@@ -31,7 +31,6 @@ export function createRestaurantDetailElement(detailName, detailValue) {
 }
 try {
   const sortSelect = document.getElementById("sort-select");
-  9;
 
   sortSelect.addEventListener("change", (event) => {
     const updateTable = () => {
