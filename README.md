@@ -1,4 +1,4 @@
-# MunchFinder
+[#MunchFinder](https://users.metropolia.fi/~stefanot/web-restaurant-app/documents/)
 
 ## This application is part of the web development course at Metropolia.
 
