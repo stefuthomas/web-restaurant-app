@@ -25,7 +25,7 @@ let avatar;
 function avatarInit() {
   avatar = document.querySelector(".avatar");
   if (!data.data.avatar) {
-    avatar.src = "/layout/styles/images/default-avatar.jpg";
+    avatar.src = "/layout/styles/media/default-avatar.jpg";
   } else {
     getAvatar(data, token)
       .then((url) => {
