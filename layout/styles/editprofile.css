@@ -34,6 +34,7 @@ header h1 {
   margin: 1rem auto 0;
   background-color: #fffdf6;
   border-radius: 10px;
+  border: 2px solid #494949;
   box-shadow: 0 0 10px 4px rgba(129, 129, 129, 0.4);
 }
 
