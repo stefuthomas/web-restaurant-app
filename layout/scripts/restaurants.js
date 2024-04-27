@@ -94,15 +94,15 @@ function createTable() {
         dailyMenuButton.addEventListener("click", () => {
           createDailyMenu(restaurant._id, modalContent);
           dailyMenuButton.disabled = true;
-          weeklyMenuSelect.disabled = false;
+          weeklyMenuButton.disabled = false;
         });
 
-        const weeklyMenuSelect = document.createElement("button");
-        weeklyMenuSelect.textContent = "Weekly menu";
-        menuButtons.appendChild(weeklyMenuSelect);
-        weeklyMenuSelect.addEventListener("click", () => {
+        const weeklyMenuButton = document.createElement("button");
+        weeklyMenuButton.textContent = "Weekly menu";
+        menuButtons.appendChild(weeklyMenuButton);
+        weeklyMenuButton.addEventListener("click", () => {
           createWeeklyMenu(restaurant._id, modalContent);
-          weeklyMenuSelect.disabled = true;
+          weeklyMenuButton.disabled = true;
           dailyMenuButton.disabled = false;
         });
       });

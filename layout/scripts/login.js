@@ -36,7 +36,6 @@ async function login(username, password) {
       window.location.href = "index.html";
     }, 2000);
   } else {
-
     loginMessage.innerHTML = data.message + "!";
     loginMessage.style.color = "red";
   }

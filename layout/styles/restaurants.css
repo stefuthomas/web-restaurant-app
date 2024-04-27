@@ -226,6 +226,10 @@
     margin-left: 0.5rem;
   }
 
+  .modal {
+    height: 100%;
+  }
+
   .modal-content {
     width: 45rem;
   }
@@ -236,7 +240,8 @@
   }
 
   .courses-table {
-    height: 10rem;
+    max-height: 17rem;
+    overflow: auto;
   }
 
   .menu-buttons {
@@ -254,11 +259,11 @@
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 440px) {
   .restaurants {
     display: block;
     margin: auto;
-    width: 400px;
+    width: 100%;
   }
 
   #table-section {
@@ -330,9 +335,5 @@
 
   .popup-content h3 {
     font-size: 1rem;
-  }
-
-  #map {
-    height: 10rem;
   }
 }
