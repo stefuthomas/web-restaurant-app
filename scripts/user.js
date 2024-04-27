@@ -59,7 +59,7 @@ function createUserData(loggedIn) {
     const avatar = document.createElement("img");
 
     if (!data.data.avatar) {
-      avatar.src = "/layout/styles/media/default-avatar.jpg";
+      avatar.src = "/styles/media/default-avatar.jpg";
     } else {
       getAvatar(data, token)
         .then((url) => {
