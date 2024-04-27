@@ -1,48 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Edit Profile</title>
     <link rel="icon" type="image/x-icon" href="../styles/media/icon.png">
-    <link rel="stylesheet" href="../styles/fonts.css" />
-    <link rel="stylesheet" href="../styles/editprofile.css" />
+    <link rel="stylesheet" href="../styles/fonts.css"/>
+    <link rel="stylesheet" href="../styles/editprofile.css"/>
     <script type="module" src="../scripts/editprofile.js"></script>
-  </head>
-  <body>
-    <header>
-      <h1 onclick="window.location.href='index.html'">MunchFinder</h1>
-    </header>
-    <div class="user">
-      <main>
+</head>
+<body>
+<header>
+    <h1 onclick="window.location.href='index.html'">MunchFinder</h1>
+</header>
+<div class="user">
+    <main>
         <h2>Edit Profile</h2>
-        <img class="avatar" src="none" alt="User Avatar" />
+        <button onclick="window.location.href='index.html'" class="buttons">Go Back</button>
+        <img class="avatar" src="none" alt="User Avatar"/>
         <div class="username"></div>
-        <div class="change-avatar">
-          <button id="change-avatar-button">Change Avatar</button>
-        </div>
-        <input type="file" id="avatar-input" name="avatar" />
+        <button id="change-avatar-button" class="buttons">Change Avatar</button>
+        <input type="file" id="avatar-input" name="avatar"/>
         <form id="edit-form">
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username" />
-          <button id="save-username" class="buttons" type="submit">
-            Save Username
-          </button>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" />
-          <button id="save-email" class="buttons" type="submit">
-            Save Email
-          </button>
-          <label for="favourite-restaurant">Favourite Restaurant:</label>
-          <select id="favourite-restaurant" name="favourite restaurant">
-            <option value="">Select a restaurant</option>
-          </select>
-          <button id="save-favourite-restaurant" class="buttons" type="submit">
-            Save Favourite Restaurant
-          </button>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"/>
+            <button id="save-username" class="buttons" type="submit">
+                Save Username
+            </button>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"/>
+            <button id="save-email" class="buttons" type="submit">
+                Save Email
+            </button>
+            <label for="favourite-restaurant">Favourite Restaurant:</label>
+            <select id="favourite-restaurant" name="favourite restaurant">
+                <option value="">Select a restaurant</option>
+            </select>
+            <button id="save-favourite-restaurant" class="buttons" type="submit">
+                Save Favourite Restaurant
+            </button>
         </form>
         <p id="save-status"></p>
-      </main>
-    </div>
-  </body>
+    </main>
+</div>
+</body>
 </html>
