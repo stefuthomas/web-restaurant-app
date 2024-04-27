@@ -2,7 +2,7 @@ import {
   uploadProfilePicture,
   getAvatar,
   updateUserInfo,
-} from "../scripts/components.js";
+} from "./components.js";
 
 let token, data;
 window.onload = function () {

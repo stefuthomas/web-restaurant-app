@@ -5,7 +5,7 @@ import {
   modal,
   createDailyMenu,
   createWeeklyMenu,
-} from "../scripts/components.js";
+} from "./components.js";
 
 window.onload = function () {
   const token = sessionStorage.getItem("token");

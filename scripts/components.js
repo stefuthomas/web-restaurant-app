@@ -2,7 +2,7 @@ export const restaurants = [];
 export const modal = document.getElementById("myModal");
 export const span = document.getElementsByClassName("close")[0];
 
-import { createRestaurantDetailElement } from "../scripts/restaurants.js";
+import { createRestaurantDetailElement } from "./restaurants.js";
 
 export async function getRestaurant(id) {
   try {

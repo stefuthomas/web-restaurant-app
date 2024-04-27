@@ -4,7 +4,7 @@ import {
   span,
   createDailyMenu,
   createWeeklyMenu,
-} from "../scripts/components.js";
+} from "./components.js";
 let map, currentLocation;
 const restaurants = [];
 
