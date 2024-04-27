@@ -11,6 +11,7 @@ form.addEventListener("submit", (e) => {
   const confirmPassword = form.confirmPassword.value;
   if (password !== confirmPassword) {
     signupMessage.innerHTML = "Passwords do not match!";
+    signupMessage.style.color = "red";
   } else {
     signup(username, email, password);
   }
