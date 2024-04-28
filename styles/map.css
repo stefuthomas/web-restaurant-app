@@ -51,28 +51,10 @@
     display: none;
 }
 
-.leaflet-container
-leaflet-touch
-leaflet-retina
-leaflet-fade-anim
-leaflet-grab
-leaflet-touch-drag
-leaflet-touch-zoom {
-    z-index: 500;
-}
-
-
-@media (max-width: 1600px) {
-    .popup-content h3 {
-        font-size: 1rem;
-    }
-    #map {
-        height: 30rem;
-    }
-}
-
-@media (max-width: 440px) {
+@media (max-width: 800px) {
     #map-section {
-        display: none;
+        width: 100%;
+        margin: 1rem 0 0 0;
     }
+
 }

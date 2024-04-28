@@ -31,7 +31,7 @@
   box-shadow: 0 0 10px 4px rgba(129, 129, 129, 0.4);
   background-color: #fffdf6;
   border: 2px solid #494949;
-  width: 44.75rem;
+  width: 50%;
 }
 
 #table-section {
@@ -156,9 +156,9 @@
 }
 
 .menu-buttons {
-  width: 30%;
+  width: 75%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: auto;
 }
 
@@ -199,70 +199,10 @@
   justify-content: center;
 }
 
-@media (max-width: 1600px) {
-  .restaurants select {
-    width: 100%;
-  }
-
-  .restaurants-header {
-    align-items: flex-start;
-  }
-
-  .restaurants h3 {
-    font-size: 1.2rem;
-  }
-
-  .restaurants th,
-  .restaurants td {
-    padding: 0.2em 0.5em;
-  }
-
-  .scrollable-table {
-    height: 30rem;
-  }
-
-  #sort-select {
-    width: 5rem;
-    margin-left: 0.5rem;
-  }
-
-  .modal {
-    height: 100%;
-  }
-
-  .modal-content {
-    width: 45rem;
-  }
-
-  .modal-content h3,
-  .modal-content .suggested {
-    font-size: 1.2rem;
-  }
-
-  .courses-table {
-    max-height: 17rem;
-    overflow: auto;
-  }
-
-  .menu-buttons {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .menu-buttons button {
-    width: auto;
-    margin-bottom: 1rem;
-  }
-
-  .restaurant-name {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 440px) {
+@media (max-width: 800px) {
   .restaurants {
     display: block;
-    margin: auto;
+    margin-top: 1rem;
     width: 100%;
   }
 
@@ -298,10 +238,6 @@
     height: 10rem;
   }
 
-  .modal-content {
-    width: 75%;
-  }
-
   .modal-content h3,
   .modal-content .suggested {
     font-size: 1.2rem;
@@ -316,12 +252,6 @@
   .courses-table {
     height: 10rem;
     overflow: auto;
-  }
-
-  .menu-buttons {
-    display: flex;
-    justify-content: space-around;
-    width: 20rem;
   }
 
   .menu-buttons button {
