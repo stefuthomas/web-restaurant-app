@@ -1,4 +1,4 @@
-export const restaurants = [];
+export let restaurants = [];
 export const modal = document.getElementById("myModal");
 export const span = document.getElementsByClassName("close")[0];
 

@@ -68,11 +68,26 @@
     <section id="table-section">
         <div class="restaurants-header">
             <h3>Restaurants</h3>
-            <select id="sort-select">
-                <option value="a-z">A-Z</option>
-                <option value="z-a">Z-A</option>
-                <option value="closest-to-you">Closest to you</option>
-            </select>
+            <div class="sort-filter">
+                <select id="sort-select">
+                    <option value="a-z">A-Z</option>
+                    <option value="z-a">Z-A</option>
+                    <option value="closest-to-you">Closest to you</option>
+                </select>
+                <select id="city-filter">
+                    <option value="all">All</option>
+                    <option value="helsinki">Helsinki</option>
+                    <option value="espoo">Espoo</option>
+                    <option value="vantaa">Vantaa</option>
+                    <option value="tampere">Tampere</option>
+                    <option value="turku">Turku</option>
+                    <option value="pori">Pori</option>
+                    <option value="rovaniemi">Rovaniemi</option>
+                    <option value="kuopio">Kuopio</option>
+                    <option value="joensuu">Joensuu</option>
+                    <option value="vaasa">Vaasa</option>
+                </select>
+            </div>
         </div>
         <div class="scrollable-table">
             <table id="restaurants-table">

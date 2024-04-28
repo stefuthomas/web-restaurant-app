@@ -24,11 +24,12 @@ function createTableRow(restaurant) {
 export function createRestaurantDetailElement(detailName, detailValue) {
   const detailElement = document.createElement("p");
   detailElement.textContent =
-    detailValue && detailValue !== "-"
-      ? `${detailName}: ${detailValue}`
-      : `${detailName}: Not available`;
+      detailValue && detailValue !== "-"
+          ? `${detailName}: ${detailValue}`
+          : `${detailName}: Not available`;
   return detailElement;
 }
+
 try {
   const sortSelect = document.getElementById("sort-select");
   sortSelect.addEventListener("change", (event) => {
@@ -37,43 +38,58 @@ try {
       while (tbody.firstChild) {
         tbody.removeChild(tbody.firstChild);
       }
-      createTable();
+      createTable(filteredRestaurants);
     };
 
     const sortValue = event.target.value;
 
     if (sortValue === "a-z") {
-      restaurants.sort((a, b) => a.name.localeCompare(b.name));
+      filteredRestaurants.sort((a, b) => a.name.localeCompare(b.name));
       updateTable();
     } else if (sortValue === "z-a") {
-      restaurants.sort((a, b) => b.name.localeCompare(a.name));
+      filteredRestaurants.sort((a, b) => b.name.localeCompare(a.name));
       updateTable();
     } else if (sortValue === "closest-to-you") {
       navigator.geolocation.getCurrentPosition((position) => {
         const x1 = position.coords.latitude;
         const y1 = position.coords.longitude;
-        restaurants.forEach((restaurant) => {
+        filteredRestaurants.forEach((restaurant) => {
           let x2 = restaurant.location.coordinates[1];
           let y2 = restaurant.location.coordinates[0];
           restaurant.distance = Math.sqrt(
-            Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)
+              Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)
           );
         });
-        restaurants.sort((a, b) => a.distance - b.distance);
+        filteredRestaurants.sort((a, b) => a.distance - b.distance);
         updateTable();
       });
     }
   });
 } catch (error) {}
 
-function createTable() {
+try {
+  const cityFilter = document.getElementById("city-filter");
+  cityFilter.addEventListener("change", (event) => {
+    const filterValue = event.target.value;
+
+    if (filterValue !== "all") {
+      filteredRestaurants = restaurants.filter(restaurant => restaurant.city.toLowerCase() === filterValue);
+    } else {
+      filteredRestaurants = restaurants;
+    }
+
+    createTable(filteredRestaurants);
+  });
+} catch (error) {}
+
+function createTable(restaurantsToDisplay) {
   try {
     const tbody = document.getElementById("table-body");
     while (tbody.firstChild) {
       tbody.removeChild(tbody.firstChild);
     }
 
-    restaurants.forEach((restaurant) => {
+    restaurantsToDisplay.forEach((restaurant) => {
       const row = createTableRow(restaurant);
       row.id = restaurant._id;
 
@@ -118,9 +134,14 @@ function createTable() {
         modal.style.display = "none";
       }
     };
-  } catch (error) {}
+  } catch (error) {
+    console.error(error);
+  }
 }
 
+let filteredRestaurants;
+
 getRestaurants().then(() => {
-  createTable();
+  filteredRestaurants = restaurants;
+  createTable(restaurants);
 });

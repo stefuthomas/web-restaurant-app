@@ -1,273 +1,266 @@
 .restaurants {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 20px auto auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px auto auto;
 }
 
 .restaurants-header {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.sort-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .restaurants select {
-  height: 1.5rem;
-  width: 8rem;
-  font-family: "text-light", sans-serif;
-  font-size: 1rem;
-  color: #494949;
-  margin-right: 2rem;
-  margin-bottom: auto;
-  margin-top: auto;
-  border-radius: 5px;
-  background-color: #ece8d9;
+    height: 1.5rem;
+    width: 8rem;
+    font-family: "text-light", sans-serif;
+    font-size: 1rem;
+    color: #494949;
+    margin-right: 2rem;
+    margin-bottom: auto;
+    margin-top: auto;
+    border-radius: 5px;
+    background-color: #ece8d9;
 }
 
 .restaurants section {
-  border-radius: 10px;
-  box-shadow: 0 0 10px 4px rgba(129, 129, 129, 0.4);
-  background-color: #fffdf6;
-  border: 2px solid #494949;
-  width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 4px rgba(129, 129, 129, 0.4);
+    background-color: #fffdf6;
+    border: 2px solid #494949;
+    width: 50%;
 }
 
 #table-section {
-  margin-right: 0.25rem;
+    margin-right: 0.25rem;
 }
 
 .restaurants h3 {
-  font-family: "heading", sans-serif;
-  font-weight: bold;
-  color: #494949;
-  display: flex;
-  justify-content: left;
-  margin-left: 1rem;
+    font-family: "heading", sans-serif;
+    font-weight: bold;
+    color: #494949;
+    display: flex;
+    justify-content: left;
+    margin-left: 1rem;
 }
 
 .restaurants table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 .restaurants th {
-  font-family: "text-medium", sans-serif;
-  border-bottom: 1px solid #ccc;
-  font-weight: normal;
-  padding: 0.5em 1em;
-  text-align: left;
-  width: 25%;
+    font-family: "text-medium", sans-serif;
+    border-bottom: 1px solid #ccc;
+    font-weight: normal;
+    padding: 0.5em 1em;
+    text-align: left;
+    width: 25%;
 }
 
 .restaurants td {
-  font-family: "text-light", sans-serif;
-  font-weight: 50;
-  border-bottom: 1px solid #ccc;
-  padding: 0.5em 1em;
+    font-family: "text-light", sans-serif;
+    font-weight: 50;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5em 1em;
 }
 
 .highlight {
-  background-color: #959393;
-  font-weight: bold;
+    background-color: #959393;
+    font-weight: bold;
 }
 
 .scrollable-table {
-  height: 50rem;
-  width: auto;
-  overflow: auto;
+    height: 50rem;
+    width: auto;
+    overflow: auto;
 }
 
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  padding-top: 20px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
-  background-color: #fffdf6;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 45%;
+    background-color: #fffdf6;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 45%;
 }
 
 .modal-content h3 {
-  font-family: "heading", sans-serif;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #494949;
-  display: flex;
-  justify-content: center;
+    font-family: "heading", sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #494949;
+    display: flex;
+    justify-content: center;
 }
 
 .modal-content .suggested {
-  font-family: "heading", sans-serif;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #494949;
-  display: flex;
-  justify-content: left;
+    font-family: "heading", sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #494949;
+    display: flex;
+    justify-content: left;
 }
 
 .modal-content .matching-restaurants-list {
-  font-family: "text-medium", sans-serif;
-  color: #494949;
-  font-size: 1.25rem;
-  max-height: 15rem;
-  overflow: auto;
-  list-style-type: none;
+    font-family: "text-medium", sans-serif;
+    color: #494949;
+    font-size: 1.25rem;
+    max-height: 15rem;
+    overflow: auto;
+    list-style-type: none;
 }
 
 .modal-content .matching-restaurants-list li:hover {
-  cursor: pointer;
-  color: #707070;
-  font-weight: bold;
-  list-style-type: circle;
+    cursor: pointer;
+    color: #707070;
+    font-weight: bold;
+    list-style-type: circle;
 }
 
 .modal-content .suggestions-list {
-  color: #494949;
-  font-family: "text-medium", sans-serif;
-  font-size: 1.25rem;
+    color: #494949;
+    font-family: "text-medium", sans-serif;
+    font-size: 1.25rem;
 }
 
 .modal-content p {
-  font-family: "text-light", sans-serif;
-  font-size: 1rem;
-  display: flex;
-  justify-content: center;
+    font-family: "text-light", sans-serif;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
 }
 
 .courses-table {
-  max-height: 30rem;
-  overflow: auto;
+    max-height: 30rem;
+    overflow: auto;
 }
 
 .menu-buttons {
-  width: 75%;
-  display: flex;
-  justify-content: center;
-  margin: auto;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
 }
 
 .menu-buttons button {
-  font-family: "buttons", sans-serif;
-  font-size: 1rem;
-  background-color: #494949;
-  color: white;
-  border: 1px solid white;
-  padding: 5px;
-  border-radius: 5px;
-  cursor: pointer;
+    font-family: "buttons", sans-serif;
+    font-size: 1rem;
+    background-color: #494949;
+    color: white;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .menu-buttons button:hover {
-  background-color: #707070;
+    background-color: #707070;
 }
 
 .close {
-  color: black;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .restaurant-name {
-  font-family: "heading", sans-serif;
-  font-weight: bold;
-  color: #494949;
-  display: flex;
-  justify-content: center;
+    font-family: "heading", sans-serif;
+    font-weight: bold;
+    color: #494949;
+    display: flex;
+    justify-content: center;
 }
 
 @media (max-width: 800px) {
-  .restaurants {
-    display: block;
-    margin-top: 1rem;
-    width: 100%;
-  }
+    .restaurants {
+        display: block;
+        margin-top: 1rem;
+        width: 100%;
+    }
 
-  #table-section {
-    width: 100%;
-  }
+    #table-section {
+        width: 100%;
+    }
 
-  .restaurants select {
-    width: 100%;
-  }
 
-  .restaurants-header {
-    display: flex;
-    align-items: flex-start;
-  }
+    .restaurants h3 {
+        font-size: 1.2rem;
+    }
 
-  .restaurants h3 {
-    font-size: 1.2rem;
-  }
+    .restaurants th,
+    .restaurants td {
+        width: auto;
+        height: auto;
+    }
 
-  .restaurants th,
-  .restaurants td {
-    width: auto;
-    height: auto;
-  }
+    .scrollable-table {
+        height: 20rem;
+    }
 
-  #sort-select {
-    width: 5rem;
-    margin-left: 0.5rem;
-  }
+    .modal-content {
+        width: 80%;
+    }
 
-  .scrollable-table {
-    height: 20rem;
-  }
+    .modal-content h3,
+    .modal-content .suggested {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
 
-  .modal-content {
-    width: 80%;
-  }
+    .modal-content .matching-restaurants-list,
+    .modal-content .suggestions-list {
+        font-size: 1rem;
+    }
 
-  .modal-content h3,
-  .modal-content .suggested {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }
+    .courses-table {
+        height: 40%;
+        overflow: auto;
+    }
 
-  .modal-content .matching-restaurants-list,
-  .modal-content .suggestions-list {
-    font-size: 1rem;
-  }
+    .menu-buttons button {
+        width: auto;
+        margin-bottom: 1rem;
+    }
 
-  .courses-table {
-    height: 40%;
-    overflow: auto;
-  }
+    .restaurant-name {
+        font-size: 1.2rem;
+    }
 
-  .menu-buttons button {
-    width: auto;
-    margin-bottom: 1rem;
-  }
-
-  .restaurant-name {
-    font-size: 1.2rem;
-  }
-
-  .popup-content h3 {
-    font-size: 1rem;
-  }
+    .popup-content h3 {
+        font-size: 1rem;
+    }
 }
