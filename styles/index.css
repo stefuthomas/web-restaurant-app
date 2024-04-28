@@ -34,8 +34,8 @@ header input {
 }
 .account-buttons {
   display: flex;
-  justify-content: space-between;
-  width: 7.5%;
+  justify-content: center;
+  width: 10rem;
 }
 
 .account-buttons button {

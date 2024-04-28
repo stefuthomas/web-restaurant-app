@@ -235,7 +235,11 @@
   }
 
   .scrollable-table {
-    height: 10rem;
+    height: 20rem;
+  }
+
+  .modal-content {
+    width: 80%;
   }
 
   .modal-content h3,
@@ -250,7 +254,7 @@
   }
 
   .courses-table {
-    height: 10rem;
+    height: 40%;
     overflow: auto;
   }
 
