@@ -7,7 +7,7 @@ This application is part of the web development course at Metropolia. The aim of
 ## Features of the application
 
 - Searching for restaurants
-- Filtering the list of restaurants to be closest to the user
+- Changing the order that the restaurants are displayed
 - Registration and profile management for avatar
 
 ## How to access the page
