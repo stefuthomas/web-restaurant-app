@@ -136,6 +136,7 @@ header input {
 .profile .user-data {
   font-family: "text-light", sans-serif;
   margin-left: 20px;
+  margin-bottom: 1rem;
 }
 
 .user-data .user-avatar {
