@@ -1,4 +1,4 @@
-# [MunchFinder](https://users.metropolia.fi/~stefanot/web-restaurant-app/documents/)
+# MunchFinder
 
 ## About the project.
 
@@ -6,11 +6,15 @@ This application is part of the web development course at Metropolia. The aim of
 
 ## Features of the application
 
+- Daily and weekly menus of restaurant
+- Resizing the menu window
 - Searching for restaurants
 - Filtering and sorting of the restaurants
 - Registration and profile management
+- Adding favourite restaurant
 - Viewing the restaurants on the map
 
 ## How to access the page
 
+[Link to application](https://users.metropolia.fi/~stefanot/web-restaurant-app/documents/)
 To access the page, the only requirement is to be connected to the Eduroam network or to use a VPN that allows the connection to be established remotely.
