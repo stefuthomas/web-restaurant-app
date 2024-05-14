@@ -16,5 +16,6 @@ This application is part of the web development course at Metropolia. The aim of
 
 ## How to access the page
 
-[Link to application](https://users.metropolia.fi/~stefanot/web-restaurant-app/documents/)
 To access the page, the only requirement is to be connected to the Eduroam network or to use a VPN that allows the connection to be established remotely.
+
+[Link to application](https://users.metropolia.fi/~stefanot/web-restaurant-app/documents/)
