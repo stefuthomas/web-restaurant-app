@@ -11,6 +11,7 @@ This application is part of the web development course at Metropolia. The aim of
 - Searching for restaurants
 - Filtering and sorting of the restaurants
 - Registration and profile management
+- Uploading a profile pic
 - Adding favourite restaurant
 - Viewing the restaurants on the map
 
